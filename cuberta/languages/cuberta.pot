@@ -1,0 +1,526 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Cuberta\n"
+"POT-Creation-Date: 2018-01-31 07:01+0500\n"
+"PO-Revision-Date: 2018-01-31 07:01+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:26
+#, php-format
+msgctxt "Comments title"
+msgid "One comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:42
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:55
+msgid "Name"
+msgstr ""
+
+#: comments.php:61
+msgid "Email"
+msgstr ""
+
+#: comments.php:67
+msgid "Website"
+msgstr ""
+
+#: content-none.php:15
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:22
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:26
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-page.php:32 content.php:60
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:42 content.php:81
+msgid "Edit"
+msgstr ""
+
+#: footer.php:71
+msgid "Contacts"
+msgstr ""
+
+#: footer.php:116
+msgctxt "Footer"
+msgid "Social"
+msgstr ""
+
+#: front-page.php:40
+msgid "Welcome text"
+msgstr ""
+
+#: front-page.php:43
+msgid ""
+"Cuberta is WordPress theme. Theme which fully uses entire width of the page, "
+"depending on the size of the screen. Site administrator can customize color "
+"scheme, headers fonts, replace front page items with widgets. Theme contains "
+"built-in main menu, social menu, front page."
+msgstr ""
+
+#: front-page.php:59
+msgid "Color scheme"
+msgstr ""
+
+#: front-page.php:60 functions.php:404
+msgid "Headers fonts"
+msgstr ""
+
+#: front-page.php:61 functions.php:498
+msgid "Front page"
+msgstr ""
+
+#: front-page.php:63
+msgid "Administrator can customize most of site elements colors."
+msgstr ""
+
+#: front-page.php:64
+msgid "Site administrator can select one of 30 fonts for displaying headers."
+msgstr ""
+
+#: front-page.php:65
+msgid "Any front page layout may be hidden and replaced by widget."
+msgstr ""
+
+#: front-page.php:113
+msgid "Latest posts"
+msgstr ""
+
+#: functions.php:20
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:30
+msgid "Default Header Image"
+msgstr ""
+
+#: functions.php:66
+msgid "Footer Widget Area"
+msgstr ""
+
+#: functions.php:68
+msgid "This widget area is placed in the footer."
+msgstr ""
+
+#: functions.php:75 functions.php:84 functions.php:93 functions.php:102
+#, php-format
+msgid "Front Page Widget Area %s"
+msgstr ""
+
+#: functions.php:77
+msgid "This widget area is the highest front page widget area."
+msgstr ""
+
+#: functions.php:86
+msgid "This widget is between Welcome text and Three boxes area."
+msgstr ""
+
+#: functions.php:95
+msgid "This widget area is between Three boxes area and Latest posts area."
+msgstr ""
+
+#: functions.php:104
+msgid "This widget area is a last widget area of the front page."
+msgstr ""
+
+#: functions.php:222
+msgid "Display site identity"
+msgstr ""
+
+#: functions.php:239
+msgid "All Headers Color"
+msgstr ""
+
+#: functions.php:240
+msgid "This color applies for all headers"
+msgstr ""
+
+#: functions.php:254
+msgid "All Links Color"
+msgstr ""
+
+#: functions.php:255
+msgid "This color applies for all links"
+msgstr ""
+
+#: functions.php:270
+msgid "Footer Background Color"
+msgstr ""
+
+#: functions.php:271
+msgid "This color applies for footer background"
+msgstr ""
+
+#: functions.php:285
+msgid "Footer Font Color"
+msgstr ""
+
+#: functions.php:286
+msgid "This color applies for footer text and links"
+msgstr ""
+
+#: functions.php:300
+msgid "Footer Headers Color"
+msgstr ""
+
+#: functions.php:301
+msgid "This color applies for footer headers"
+msgstr ""
+
+#: functions.php:315
+msgid "Menu Background Color"
+msgstr ""
+
+#: functions.php:316
+msgid "This color applies for menu background"
+msgstr ""
+
+#: functions.php:330
+msgid "Menu Links Color"
+msgstr ""
+
+#: functions.php:331
+msgid "This color applies for menu links and sidebar links"
+msgstr ""
+
+#: functions.php:345
+msgid "Meta Links Color"
+msgstr ""
+
+#: functions.php:346
+msgid "This color applies for links under article header (meta data)"
+msgstr ""
+
+#: functions.php:360
+msgid "Meta Text Color"
+msgstr ""
+
+#: functions.php:361
+msgid "This color applies for text under article header (meta data)"
+msgstr ""
+
+#: functions.php:375
+msgid "Site Header Color"
+msgstr ""
+
+#: functions.php:376
+msgid "This color applies for main site title"
+msgstr ""
+
+#: functions.php:390
+msgid "Site Description Color"
+msgstr ""
+
+#: functions.php:391
+msgid "This color applies for site description"
+msgstr ""
+
+#: functions.php:410
+msgid "Choose font for site header"
+msgstr ""
+
+#: functions.php:456
+msgid "Choose font for all headers"
+msgstr ""
+
+#: functions.php:509
+msgid "Display Welcome Text"
+msgstr ""
+
+#: functions.php:522
+msgid "Front page welcome text"
+msgstr ""
+
+#: functions.php:536
+msgid "Display Three boxes"
+msgstr ""
+
+#: functions.php:551
+#, php-format
+msgid "Front page box %d"
+msgstr ""
+
+#: functions.php:566
+msgid "Display Latest Posts"
+msgstr ""
+
+#: functions.php:576
+msgid "Footer contacts"
+msgstr ""
+
+#: functions.php:587
+msgid "Country, city"
+msgstr ""
+
+#: functions.php:601
+msgid "Address"
+msgstr ""
+
+#: functions.php:615 functions.php:629
+msgid "Phone"
+msgstr ""
+
+#: functions.php:643 functions.php:657
+msgid "E-mail"
+msgstr ""
+
+#: functions.php:671
+msgid "Skype"
+msgstr ""
+
+#: functions.php:685
+msgid "Fax"
+msgstr ""
+
+#: functions.php:694
+msgid "Footer social"
+msgstr ""
+
+#: functions.php:705
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:706
+msgid "Set full link of your facebook profile"
+msgstr ""
+
+#: functions.php:720
+msgid "Github"
+msgstr ""
+
+#: functions.php:721
+msgid "Set full link of your github profile"
+msgstr ""
+
+#: functions.php:735
+msgid "Gitlab"
+msgstr ""
+
+#: functions.php:736
+msgid "Set full link of your gitlab profile"
+msgstr ""
+
+#: functions.php:750
+msgid "Google plus"
+msgstr ""
+
+#: functions.php:751
+msgid "Set full link of your google plus profile"
+msgstr ""
+
+#: functions.php:765
+msgid "Instagram"
+msgstr ""
+
+#: functions.php:766
+msgid "Set full link of your instagram profile"
+msgstr ""
+
+#: functions.php:780
+msgid "LinkedIn"
+msgstr ""
+
+#: functions.php:781
+msgid "Set full link of your linkedin profile"
+msgstr ""
+
+#: functions.php:795
+msgid "Pinterest"
+msgstr ""
+
+#: functions.php:796
+msgid "Set full link of your pinterest profile"
+msgstr ""
+
+#: functions.php:810
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:811
+msgid "Set full link of your twitter profile"
+msgstr ""
+
+#: functions.php:825
+msgid "Vimeo"
+msgstr ""
+
+#: functions.php:826
+msgid "Set full link of your vimeo profile"
+msgstr ""
+
+#: functions.php:840
+msgid "VK"
+msgstr ""
+
+#: functions.php:841
+msgid "Set full link of your vk profile"
+msgstr ""
+
+#: functions.php:855
+msgid "YouTube"
+msgstr ""
+
+#: functions.php:856
+msgid "Set full link of your youtube profile"
+msgstr ""
+
+#: functions.php:862
+msgid "You can set four buttons in the header of Cuberta theme."
+msgstr ""
+
+#: functions.php:863
+msgid ""
+"You have to assign some menu to Primary menu area to display Main menu "
+"button in the header. You can set other buttons visibility with checkboxes "
+"below."
+msgstr ""
+
+#: functions.php:864 header.php:73
+msgid "Home"
+msgstr ""
+
+#: functions.php:865
+msgid "Main menu"
+msgstr ""
+
+#: functions.php:866 header.php:79
+msgid "Search"
+msgstr ""
+
+#: functions.php:867 header.php:90
+msgid "Login"
+msgstr ""
+
+#: functions.php:871
+msgid "Header settings"
+msgstr ""
+
+#: functions.php:883
+msgid "Display Home Button"
+msgstr ""
+
+#: functions.php:884
+msgid "This is home icon in the header of theme"
+msgstr ""
+
+#: functions.php:899
+msgid "Display Search Button"
+msgstr ""
+
+#: functions.php:900
+msgid "This is search icon in the header of theme"
+msgstr ""
+
+#: functions.php:915
+msgid "Display Login Button"
+msgstr ""
+
+#: functions.php:916
+msgid "This is login icon in the header of theme"
+msgstr ""
+
+#: functions.php:1048
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:1086
+msgid "Read"
+msgstr ""
+
+#: functions.php:1099 functions.php:1147
+msgid "Featured"
+msgstr ""
+
+#: functions.php:1104
+msgctxt "Used before post format."
+msgid "Format"
+msgstr ""
+
+#: functions.php:1115 functions.php:1160
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr ""
+
+#: functions.php:1121
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr ""
+
+#: functions.php:1127 functions.php:1171
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr ""
+
+#: functions.php:1133
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr ""
+
+#: header.php:76
+msgid "Menu"
+msgstr ""
+
+#: header.php:86
+msgid "Logout"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Cuberta"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://cuberta.saqwel.ru/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Cuberta is a unique WordPress theme. It is adapted for wide and narrow "
+"screens. Cuberta has many options for customization site colors, fonts and "
+"front page layouts."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Saqwel"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.saqwel.ru/"
+msgstr ""
