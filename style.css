@@ -7,7 +7,7 @@ Description: Cuberta is a unique WordPress theme. It is adapted for wide and nar
 Version: 2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: three-columns, left-sidebar, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, sticky-post, threaded-comments, translation-ready
+Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, threaded-comments, translation-ready, theme-options
 Text Domain: cuberta
 
 This theme, like WordPress, is licensed under the GPL.
@@ -290,12 +290,12 @@ input:not( [type="submit"] ) {
     padding: 0;
 }
 
-#sidebar-1 ul li a:not(.url) {
+#cuberta-sidebar-1 ul li a:not(.url) {
     display: inline-block;
 }
 
 .main-menu ul li,
-#sidebar-1 ul li {
+#cuberta-sidebar-1 ul li {
     margin: 10px 0;
 }
 
@@ -338,8 +338,8 @@ ul li .children {
 }
 
 .main-menu ul li a:hover,
-#sidebar-1 td a:hover,
-#sidebar-1 ul li a:hover {
+#cuberta-sidebar-1 td a:hover,
+#cuberta-sidebar-1 ul li a:hover {
     text-decoration: none;
 }
 

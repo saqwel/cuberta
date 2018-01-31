@@ -8,12 +8,6 @@
  * @subpackage Cuberta
  * @since Cuberta 1.0
  */
-// Get datetime
-$datetime = get_the_date( 'Y-m-d' ) . 'T';
-$datetime .= get_the_time( 'H-i-s' );
-$d        = get_the_date( "d" );
-$m        = get_the_date( "M" );
-$y        = get_the_date( "Y" );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if ( is_front_page() ) { ?>

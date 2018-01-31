@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
-            <?php printf( _nx( 'One comment', '%1$s comments', get_comments_number(), 'Comments title', 'cuberta' ), number_format_i18n( get_comments_number() ) ); ?>
+            <?php printf( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'Comments title', 'cuberta' ), number_format_i18n( get_comments_number() ) ); ?>
         </h2>
 
         <div class="comment-list">
@@ -31,7 +31,7 @@ if ( post_password_required() ) {
             wp_list_comments( array(
                 'avatar_size' => 64,
                 'walker'      => new cuberta_Walker_Comment,
-                'callback'    => 'format_comment',
+                'callback'    => 'cuberta_format_comment',
             ) );
             ?>
         </div><!-- .comment-list -->

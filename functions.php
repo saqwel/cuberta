@@ -1,13 +1,20 @@
 <?php
-if ( !function_exists( 'theme_setup' ) ) :
+if ( !function_exists( 'cuberta_theme_setup' ) ) :
 
-    function theme_setup() {
+    function cuberta_theme_setup() {
         load_theme_textdomain( 'cuberta', get_template_directory() . '/languages' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'custom-background' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'html5', array(
-            'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+            'comment-form', 'comment-list', 'gallery', 'caption'
+        ) );
+
+        // Add theme support for Custom Logo.
+        add_theme_support( 'custom-logo', array(
+                'width'       => 100,
+                'height'      => 100,
+                'flex-width'  => true,
         ) );
         
         // https://core.trac.wordpress.org/ticket/42804
@@ -21,27 +28,23 @@ if ( !function_exists( 'theme_setup' ) ) :
         ) );
 
         // Header image
-        $defaults = array( 
-            'default-image' => get_stylesheet_directory_uri() . '/images/main.jpg',
+        $args = array( 
+            'default-image' => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
             'header-text'   => false 
         );
-        add_theme_support( 'custom-header', $defaults );
+        add_theme_support( 'custom-header', $args );
         register_default_headers( array(
             'default-image' => array(
-                'url'           => get_stylesheet_directory_uri() . '/images/main.jpg',
-                'thumbnail_url' => get_stylesheet_directory_uri() . '/images/main.jpg',
+                'url'           => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
+                'thumbnail_url' => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
                 'description'   => __( 'Default Header Image', 'cuberta' )
             ),
         ) );
     }
 
-endif; // theme_setup
-add_action( 'after_setup_theme', 'theme_setup' );
-
-if ( !isset( $content_width ) ) {
-    $content_width = 900;
-}
-
+endif; // cuberta_theme_setup
+add_action( 'after_setup_theme', 'cuberta_theme_setup' );
+/*
 // Add google fonts
 function cuberta_add_google_fonts() {
     wp_enqueue_style( 'cuberta-google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+SC|Amatic+SC|Anonymous+Pro|Bad+Script|Comfortaa|Cormorant+Garamond|Cormorant+Infant|Exo+2|Gabriela|Jura|Kelly+Slab|Kurale|Lobster|Lora|Montserrat+Alternates|Neucha|PT+Mono|Pangolin|Pattaya|Playfair+Display+SC|Poiret+One|Roboto|Ruslan+Display|Russo+One|Seymour+One|Stalinist+One|Ubuntu|Underdog|Vollkorn|Yanone+Kaffeesatz&amp;subset=cyrillic', false ); 
@@ -51,12 +54,12 @@ add_action( 'wp_enqueue_scripts', 'cuberta_add_google_fonts' );
 
 // Add fontawesome font
 function cuberta_add_fontawesome_fonts() {
-    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/font-awesome.min.css', false ); 
+    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
     //wp_enqueue_style( 'cuberta-fontawesome-fonts', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', false ); 
 }
 
 add_action( 'wp_enqueue_scripts', 'cuberta_add_fontawesome_fonts' );
-
+*/
 // Custom style
 function cuberta_add_editor_styles() {
     add_editor_style();
@@ -64,10 +67,10 @@ function cuberta_add_editor_styles() {
 
 add_action( 'admin_init', 'cuberta_add_editor_styles' );
 
-function header_sidebar() {
+function cuberta_header_sidebar() {
     register_sidebar( array(
         'name'          => __( 'Footer Widget Area', 'cuberta' ),
-        'id'            => 'sidebar-1',
+        'id'            => 'cuberta-sidebar-1',
         'description'   => __( 'This widget area is placed in the footer.', 'cuberta' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -76,7 +79,7 @@ function header_sidebar() {
     ) );
     register_sidebar( array(
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '1' ),
-        'id'            => 'fpwa-1',
+        'id'            => 'cuberta-fpwa-1',
         'description'   => __( 'This widget area is the highest front page widget area.', 'cuberta' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -85,7 +88,7 @@ function header_sidebar() {
     ) );
     register_sidebar( array(
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '2' ),
-        'id'            => 'fpwa-2',
+        'id'            => 'cuberta-fpwa-2',
         'description'   => __( 'This widget is between Welcome text and Three boxes area.', 'cuberta' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -94,7 +97,7 @@ function header_sidebar() {
     ) );
     register_sidebar( array(
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '3' ),
-        'id'            => 'fpwa-3',
+        'id'            => 'cuberta-fpwa-3',
         'description'   => __( 'This widget area is between Three boxes area and Latest posts area.', 'cuberta' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -103,7 +106,7 @@ function header_sidebar() {
     ) );
     register_sidebar( array(
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '4' ),
-        'id'            => 'fpwa-4',
+        'id'            => 'cuberta-fpwa-4',
         'description'   => __( 'This widget area is a last widget area of the front page.', 'cuberta' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
@@ -112,24 +115,20 @@ function header_sidebar() {
     ) );
 }
 
-add_action( 'widgets_init', 'header_sidebar' );
+add_action( 'widgets_init', 'cuberta_header_sidebar' );
 
-// Add theme support for Custom Logo.
-add_theme_support( 'custom-logo', array(
-        'width'       => 100,
-        'height'      => 100,
-        'flex-width'  => true,
-) );
 
 function cuberta_page_builder() {
     wp_enqueue_script(
-    'menu', get_template_directory_uri() . '/js/menu.js', array( 'jquery' )
+    'cuberta-menu', get_template_directory_uri() . '/js/cuberta-menu.js', array( 'jquery' )
     );
     wp_enqueue_script(
-    'page-builder', get_template_directory_uri() . '/js/page-builder.js', array( 'jquery' )
+    'cuberta-page-builder', get_template_directory_uri() . '/js/cuberta-page-builder.js', array( 'jquery' )
     );
-    wp_enqueue_style( 'main-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'editor-style', get_template_directory_uri() . '/editor-style.css' );
+    wp_enqueue_style( 'cuberta-google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+SC|Amatic+SC|Anonymous+Pro|Bad+Script|Comfortaa|Cormorant+Garamond|Cormorant+Infant|Exo+2|Gabriela|Jura|Kelly+Slab|Kurale|Lobster|Lora|Montserrat+Alternates|Neucha|PT+Mono|Pangolin|Pattaya|Playfair+Display+SC|Poiret+One|Roboto|Ruslan+Display|Russo+One|Seymour+One|Stalinist+One|Ubuntu|Underdog|Vollkorn|Yanone+Kaffeesatz&amp;subset=cyrillic', false ); 
+    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
+    wp_enqueue_style( 'cuberta-main-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'cuberta-editor-style', get_template_directory_uri() . '/editor-style.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'cuberta_page_builder' );
@@ -158,7 +157,7 @@ function cuberta_sanitize_integer( $value ) {
 }
 
 // Sane default settings
-$defaults = array(
+$cuberta_defaults = array(
     'cuberta_site_identity'             => true,
     'cuberta_all_headers_color'         => '#c00',
     'cuberta_footer_color'              => '#fff',
@@ -207,16 +206,16 @@ $defaults = array(
 
 // Create filter
 function cuberta_get_settings_defaults() {
-    global $defaults;
-    return apply_filters( 'cuberta_settings_defaults', $defaults );
+    global $cuberta_defaults;
+    return apply_filters( 'cuberta_settings_defaults', $cuberta_defaults );
 }
 
 // Cuberta settings
 function cuberta_customize_register( $wp_customize ) {
-    global $defaults;
+    global $cuberta_defaults;
     // Display or not site identity
     $wp_customize->add_setting( 'cuberta_site_identity', array(
-        'default'           => $defaults['cuberta_site_identity'],
+        'default'           => $cuberta_defaults['cuberta_site_identity'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox'
     ) );
     $wp_customize->add_control(
@@ -233,7 +232,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Colors
     // All headers color
     $wp_customize->add_setting( 'cuberta_all_headers_color', array(
-        'default'           => $defaults['cuberta_all_headers_color'],
+        'default'           => $cuberta_defaults['cuberta_all_headers_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -248,7 +247,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // All Links Color
     $wp_customize->add_setting( 'cuberta_links_color', array(
-        'default'           => $defaults['cuberta_links_color'],
+        'default'           => $cuberta_defaults['cuberta_links_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -264,7 +263,7 @@ function cuberta_customize_register( $wp_customize ) {
     
     // Footer Background Color
     $wp_customize->add_setting( 'cuberta_footer_background', array(
-        'default'           => $defaults['cuberta_footer_background'],
+        'default'           => $cuberta_defaults['cuberta_footer_background'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -279,7 +278,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Footer Font Color
     $wp_customize->add_setting( 'cuberta_footer_color', array(
-        'default'           => $defaults['cuberta_footer_color'],
+        'default'           => $cuberta_defaults['cuberta_footer_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -294,7 +293,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Footer Headers Color
     $wp_customize->add_setting( 'cuberta_footer_headers_color', array(
-        'default'           => $defaults['cuberta_footer_headers_color'],
+        'default'           => $cuberta_defaults['cuberta_footer_headers_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -309,7 +308,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Menu Background Color
     $wp_customize->add_setting( 'cuberta_menu_background', array(
-        'default'           => $defaults['cuberta_menu_background'],
+        'default'           => $cuberta_defaults['cuberta_menu_background'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -324,7 +323,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Menu Font color
     $wp_customize->add_setting( 'cuberta_menu_color', array(
-        'default'           => $defaults['cuberta_menu_color'],
+        'default'           => $cuberta_defaults['cuberta_menu_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -339,7 +338,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Meta Links Color
     $wp_customize->add_setting( 'cuberta_meta_links_color', array(
-        'default'           => $defaults['cuberta_meta_links_color'],
+        'default'           => $cuberta_defaults['cuberta_meta_links_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -354,7 +353,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Meta Text Color
     $wp_customize->add_setting( 'cuberta_meta_text_color', array(
-        'default'           => $defaults['cuberta_meta_text_color'],
+        'default'           => $cuberta_defaults['cuberta_meta_text_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -369,7 +368,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Site title color
     $wp_customize->add_setting( 'cuberta_site_header_color', array(
-        'default'           => $defaults['cuberta_site_header_color'],
+        'default'           => $cuberta_defaults['cuberta_site_header_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -384,7 +383,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Site description color
     $wp_customize->add_setting( 'cuberta_site_description_color', array(
-        'default'           => $defaults['cuberta_site_description_color'],
+        'default'           => $cuberta_defaults['cuberta_site_description_color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
     $wp_customize->add_control(
@@ -400,7 +399,7 @@ function cuberta_customize_register( $wp_customize ) {
 
     // Fonts
     $wp_customize->add_setting( 'cuberta_site_header_font', array(
-        'default'           => $defaults['cuberta_site_header_font'],
+        'default'           => $cuberta_defaults['cuberta_site_header_font'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_section( 'cuberta_site_header_font_section', array(
@@ -450,7 +449,7 @@ function cuberta_customize_register( $wp_customize ) {
     )
     );
     $wp_customize->add_setting( 'cuberta_all_headers_font', array(
-        'default'           => $defaults['cuberta_all_headers_font'],
+        'default'           => $cuberta_defaults['cuberta_all_headers_font'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -503,7 +502,7 @@ function cuberta_customize_register( $wp_customize ) {
     ) );
     // Show/hide welcome text
     $wp_customize->add_setting( 'cuberta_front_page_welcome_show', array(
-        'default'           => $defaults['cuberta_front_page_welcome_show'],
+        'default'           => $cuberta_defaults['cuberta_front_page_welcome_show'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox',
     ) );
     $wp_customize->add_control(
@@ -518,7 +517,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Set page instead of welcome text
     $wp_customize->add_setting( 'cuberta_front_page_welcome', array(
-        'default'           => $defaults['cuberta_front_page_welcome'],
+        'default'           => $cuberta_defaults['cuberta_front_page_welcome'],
         'sanitize_callback' => 'cuberta_sanitize_integer',
     ) );
     $wp_customize->add_control( 'cuberta_front_page_welcome_control', array(
@@ -530,7 +529,7 @@ function cuberta_customize_register( $wp_customize ) {
     
     // Show/hide welcome boxes
     $wp_customize->add_setting( 'cuberta_front_page_boxes_show', array(
-        'default'           => $defaults['cuberta_front_page_boxes_show'],
+        'default'           => $cuberta_defaults['cuberta_front_page_boxes_show'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox',
     ) );
     $wp_customize->add_control(
@@ -547,7 +546,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Set pages for each box
     for ( $i = 1; $i <= 3; $i++ ) {
         $wp_customize->add_setting( 'cuberta_front_page_box_' . $i, array(
-            'default'           => $defaults['cuberta_front_page_box_' . $i ],
+            'default'           => $cuberta_defaults['cuberta_front_page_box_' . $i ],
             'sanitize_callback' => 'cuberta_sanitize_integer',
         ) );
         $wp_customize->add_control( 'cuberta_front_page_box_control_' . $i, array(
@@ -560,7 +559,7 @@ function cuberta_customize_register( $wp_customize ) {
     
     // Show/hide welcome boxes
     $wp_customize->add_setting( 'cuberta_front_page_latest_show', array(
-        'default'           => $defaults['cuberta_front_page_latest_show'],
+        'default'           => $cuberta_defaults['cuberta_front_page_latest_show'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox',
     ) );
     $wp_customize->add_control(
@@ -581,7 +580,7 @@ function cuberta_customize_register( $wp_customize ) {
     ) );
     // City
     $wp_customize->add_setting( 'cuberta_contacts_city', array(
-        'default'           => $defaults['cuberta_contacts_city'],
+        'default'           => $cuberta_defaults['cuberta_contacts_city'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -595,7 +594,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     //Address
     $wp_customize->add_setting( 'cuberta_contacts_address', array(
-        'default'           => $defaults['cuberta_contacts_address'],
+        'default'           => $cuberta_defaults['cuberta_contacts_address'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -609,7 +608,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Phone
     $wp_customize->add_setting( 'cuberta_contacts_phone_1', array(
-        'default'           => $defaults['cuberta_contacts_phone_1'],
+        'default'           => $cuberta_defaults['cuberta_contacts_phone_1'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -623,7 +622,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Phone
     $wp_customize->add_setting( 'cuberta_contacts_phone_2', array(
-        'default'           => $defaults['cuberta_contacts_phone_2'],
+        'default'           => $cuberta_defaults['cuberta_contacts_phone_2'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -637,7 +636,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // E-mail
     $wp_customize->add_setting( 'cuberta_contacts_email_1', array(
-        'default'           => $defaults['cuberta_contacts_email_1'],
+        'default'           => $cuberta_defaults['cuberta_contacts_email_1'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -651,7 +650,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // E-mail
     $wp_customize->add_setting( 'cuberta_contacts_email_2', array(
-        'default'           => $defaults['cuberta_contacts_email_2'],
+        'default'           => $cuberta_defaults['cuberta_contacts_email_2'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -665,7 +664,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Skype
     $wp_customize->add_setting( 'cuberta_contacts_skype', array(
-        'default'           => $defaults['cuberta_contacts_skype'],
+        'default'           => $cuberta_defaults['cuberta_contacts_skype'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -679,7 +678,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Fax
     $wp_customize->add_setting( 'cuberta_contacts_fax', array(
-        'default'           => $defaults['cuberta_contacts_fax'],
+        'default'           => $cuberta_defaults['cuberta_contacts_fax'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
     $wp_customize->add_control(
@@ -699,7 +698,7 @@ function cuberta_customize_register( $wp_customize ) {
     ) );
     // Facebook
     $wp_customize->add_setting( 'cuberta_social_facebook', array(
-        'default'           => $defaults['cuberta_social_facebook'],
+        'default'           => $cuberta_defaults['cuberta_social_facebook'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -714,7 +713,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Github
     $wp_customize->add_setting( 'cuberta_social_github', array(
-        'default'           => $defaults['cuberta_social_github'],
+        'default'           => $cuberta_defaults['cuberta_social_github'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -729,7 +728,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Gitlab
     $wp_customize->add_setting( 'cuberta_social_gitlab', array(
-        'default'           => $defaults['cuberta_social_gitlab'],
+        'default'           => $cuberta_defaults['cuberta_social_gitlab'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -744,7 +743,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Google
     $wp_customize->add_setting( 'cuberta_social_google', array(
-        'default'           => $defaults['cuberta_social_google'],
+        'default'           => $cuberta_defaults['cuberta_social_google'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -759,7 +758,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Instagram
     $wp_customize->add_setting( 'cuberta_social_instagram', array(
-        'default'           => $defaults['cuberta_social_instagram'],
+        'default'           => $cuberta_defaults['cuberta_social_instagram'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -774,7 +773,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // LinkedIn
     $wp_customize->add_setting( 'cuberta_social_linkedin', array(
-        'default'           => $defaults['cuberta_social_linkedin'],
+        'default'           => $cuberta_defaults['cuberta_social_linkedin'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -789,7 +788,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Pinterest
     $wp_customize->add_setting( 'cuberta_social_pinterest', array(
-        'default'           => $defaults['cuberta_social_pinterest'],
+        'default'           => $cuberta_defaults['cuberta_social_pinterest'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -804,7 +803,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Twitter
     $wp_customize->add_setting( 'cuberta_social_twitter', array(
-        'default'           => $defaults['cuberta_social_twitter'],
+        'default'           => $cuberta_defaults['cuberta_social_twitter'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -819,7 +818,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Vimeo
     $wp_customize->add_setting( 'cuberta_social_vimeo', array(
-        'default'           => $defaults['cuberta_social_vimeo'],
+        'default'           => $cuberta_defaults['cuberta_social_vimeo'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -834,7 +833,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // VK
     $wp_customize->add_setting( 'cuberta_social_vk', array(
-        'default'           => $defaults['cuberta_social_vk'],
+        'default'           => $cuberta_defaults['cuberta_social_vk'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -849,7 +848,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // YouTube
     $wp_customize->add_setting( 'cuberta_social_youtube', array(
-        'default'           => $defaults['cuberta_social_youtube'],
+        'default'           => $cuberta_defaults['cuberta_social_youtube'],
         'sanitize_callback' => 'esc_url'
     ) );
     $wp_customize->add_control(
@@ -877,7 +876,7 @@ function cuberta_customize_register( $wp_customize ) {
     ) );
     // Display Home Button
     $wp_customize->add_setting( 'cuberta_menu_home_button', array(
-        'default'           => $defaults['cuberta_menu_home_button'],
+        'default'           => $cuberta_defaults['cuberta_menu_home_button'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox',
     ) );
     $wp_customize->add_control(
@@ -893,7 +892,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Display Search Button
     $wp_customize->add_setting( 'cuberta_menu_search_button', array(
-        'default'           => $defaults['cuberta_menu_search_button'],
+        'default'           => $cuberta_defaults['cuberta_menu_search_button'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox'
     ) );
     $wp_customize->add_control(
@@ -909,7 +908,7 @@ function cuberta_customize_register( $wp_customize ) {
     );
     // Display Login Button
     $wp_customize->add_setting( 'cuberta_menu_login_button', array(
-        'default'           => $defaults['cuberta_menu_login_button'],
+        'default'           => $cuberta_defaults['cuberta_menu_login_button'],
         'sanitize_callback' => 'cuberta_sanitize_chechbox'
     ) );
     $wp_customize->add_control(
@@ -928,7 +927,7 @@ function cuberta_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'cuberta_customize_register' );
 
 function cuberta_customize_css() {
-    global $defaults;
+    global $cuberta_defaults;
     ?>
     <style type="text/css">
         #header-text h1 a,
@@ -938,16 +937,16 @@ function cuberta_customize_css() {
         #header-text h5 a,
         #header-text h6 a {
             <?php
-            $fontfamily = get_theme_mod( 'cuberta_site_header_font', $defaults['cuberta_site_header_font'] );
+            $fontfamily = get_theme_mod( 'cuberta_site_header_font', $cuberta_defaults['cuberta_site_header_font'] );
             if ( '' !== $fontfamily ) {
                 echo "font-family: '$fontfamily';";
             }
             ?>
-            color: <?php echo get_theme_mod( 'cuberta_site_header_color', $defaults['cuberta_site_header_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_site_header_color', $cuberta_defaults['cuberta_site_header_color'] ); ?>;
         }
 
         .more {
-            color: <?php echo get_theme_mod( 'cuberta_site_description_color', $defaults['cuberta_site_description_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_site_description_color', $cuberta_defaults['cuberta_site_description_color'] ); ?>;
         }
 
         h1,
@@ -963,12 +962,12 @@ function cuberta_customize_css() {
         h5 a,
         h6 a {
             <?php
-            $fontfamily = get_theme_mod( 'cuberta_all_headers_font', $defaults['cuberta_all_headers_font'] );
+            $fontfamily = get_theme_mod( 'cuberta_all_headers_font', $cuberta_defaults['cuberta_all_headers_font'] );
             if ( '' !== $fontfamily ) {
                 echo "font-family: '$fontfamily';";
             }
             ?>
-            color: <?php echo get_theme_mod( 'cuberta_all_headers_color', $defaults['cuberta_all_headers_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_all_headers_color', $cuberta_defaults['cuberta_all_headers_color'] ); ?>;
         }
 
         .cuberta-menu .search-submit,
@@ -976,7 +975,7 @@ function cuberta_customize_css() {
         .cuberta-menu li::after,
         .main-menu li::after,
         .main-menu a {
-            color: <?php echo get_theme_mod( 'cuberta_menu_color', $defaults['cuberta_menu_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_menu_color', $cuberta_defaults['cuberta_menu_color'] ); ?>;
         }
 
         .footer-item div,
@@ -984,7 +983,7 @@ function cuberta_customize_css() {
         .footer-item div a,
         .footer-item div span,
         .footer-item div .search-submit {
-            color: <?php echo get_theme_mod( 'cuberta_footer_color', $defaults['cuberta_footer_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_footer_color', $cuberta_defaults['cuberta_footer_color'] ); ?>;
         }
         
         .footer-item h1,
@@ -993,28 +992,28 @@ function cuberta_customize_css() {
         .footer-item h4,
         .footer-item h5,
         .footer-item h6 {
-            color: <?php echo get_theme_mod( 'cuberta_footer_headers_color', $defaults['cuberta_footer_headers_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_footer_headers_color', $cuberta_defaults['cuberta_footer_headers_color'] ); ?>;
         }
         
         .entry-meta div {
-            color: <?php echo get_theme_mod( 'cuberta_meta_text_color', $defaults['cuberta_meta_text_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_meta_text_color', $cuberta_defaults['cuberta_meta_text_color'] ); ?>;
         }
         
         .entry-meta a,
         .entry-meta time {
-            color: <?php echo get_theme_mod( 'cuberta_meta_links_color', $defaults['cuberta_meta_links_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_meta_links_color', $cuberta_defaults['cuberta_meta_links_color'] ); ?>;
         }
 
         a {
-            color: <?php echo get_theme_mod( 'cuberta_links_color', $defaults['cuberta_links_color'] ); ?>;
+            color: <?php echo get_theme_mod( 'cuberta_links_color', $cuberta_defaults['cuberta_links_color'] ); ?>;
         }
 
         .cuberta-menu {
-            background: <?php echo get_theme_mod( 'cuberta_menu_background', $defaults['cuberta_menu_background'] ); ?>;
+            background: <?php echo get_theme_mod( 'cuberta_menu_background', $cuberta_defaults['cuberta_menu_background'] ); ?>;
         }
 
         .footer-item {
-            background: <?php echo get_theme_mod( 'cuberta_footer_background', $defaults['cuberta_footer_background'] ); ?> ;
+            background: <?php echo get_theme_mod( 'cuberta_footer_background', $cuberta_defaults['cuberta_footer_background'] ); ?> ;
         }
         
         #header-image {
@@ -1028,9 +1027,8 @@ function cuberta_customize_css() {
 add_action( 'wp_head', 'cuberta_customize_css' );
 
 // Comments callback function
-function format_comment( $comment, $args, $depth ) {
+function cuberta_format_comment( $comment, $args, $depth ) {
 
-    $GLOBALS['comment'] = $comment;
     ?>
 
     <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
@@ -1084,14 +1082,14 @@ class Cuberta_Walker_Comment extends Walker_Comment {
 }
 
 // More link
-function modify_read_more_link() {
+function cuberta_modify_read_more_link() {
     $link = esc_url( get_permalink() );
     $read = __( 'Read', 'cuberta' );
     return "<p class='more-link-button'><a class='more-link' href='$link'>$read</a></p>";
 }
 
-add_filter( 'the_content_more_link', 'modify_read_more_link' );
-add_filter( 'excerpt_more', 'modify_read_more_link' );
+add_filter( 'the_content_more_link', 'cuberta_modify_read_more_link' );
+add_filter( 'excerpt_more', 'cuberta_modify_read_more_link' );
 
 
 // Display meta
@@ -1202,32 +1200,32 @@ function cuberta_categorized_blog() {
 }
 
 // Change categories count design
-function add_span_cat_count( $links ) {
+function cuberta_add_span_cat_count( $links ) {
 //$links = str_replace('</a> (', '</a> <span>(', $links);
     $links = str_replace( '</a> (', ' (', $links );
     $links = str_replace( ')', ')</a>', $links );
     return $links;
 }
 
-add_filter( 'wp_list_categories', 'add_span_cat_count' );
+add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
 
 
 // Shortcodes for widget text
 add_filter( 'widget_text', 'do_shortcode' );
 
 // Excerpts length
-$excerpt_length = 20;
+$cuberta_excerpt_length = 20;
 
-function custom_excerpt_length( $length ) {
-    global $excerpt_length;
-    return $excerpt_length;
+function cuberta_excerpt_length( $length ) {
+    global $cuberta_excerpt_length;
+    return $cuberta_excerpt_length;
 }
 
-add_filter( 'excerpt_length', 'custom_excerpt_length', 55 );
+add_filter( 'excerpt_length', 'cuberta_excerpt_length', 55 );
 
 // Make custom excerpts for pages on front page
 function cuberta_make_excerpt( $text ) {
-    global $excerpt_length;
+    global $cuberta_excerpt_length;
     $str   = '';
     $array = str_word_count( strip_tags( $text ), 1 );
     if ( count( $array ) > $excerpt_length ) {

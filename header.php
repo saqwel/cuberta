@@ -3,36 +3,37 @@
     <head>
         <?php
         if ( is_single() ) {
-            $post = get_post( get_the_ID() );
-            if ( strlen( $post->post_excerpt ) > 1 ) {
-                $description = $post->post_excerpt;
+            $cuberta_post = get_post( get_the_ID() );
+            if ( strlen( $cuberta_post->post_excerpt ) > 1 ) {
+                $cuberta_description = $cuberta_post->post_excerpt;
             } else {
-                $description = $post->post_title;
+                $cuberta_description = $cuberta_post->post_title;
             }
         } elseif ( is_page() ) {
-            $post = get_post( get_the_ID() );
-            $description = cuberta_make_excerpt( $post->post_content );
+            $cuberta_post = get_post( get_the_ID() );
+            $cuberta_description = cuberta_make_excerpt( $cuberta_post->post_content );
         } else {
-            $description = get_bloginfo( 'name' );
-            $description += " - ";
-            $description += get_bloginfo( 'description' );
+            $cuberta_description = get_bloginfo( 'name' );
+            $cuberta_description += " - ";
+            $cuberta_description += get_bloginfo( 'description' );
         }
         ?>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
-        <meta name="description" content="<?php echo $description; ?>">
+        <meta name="description" content="<?php echo $cuberta_description; ?>">
         <?php 
-        if ( is_singular() ) { 
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) == 1 ) {
+        //if ( is_singular() ) { 
             wp_enqueue_script( 'comment-reply' ); 
         }
         wp_head();
-        global $defaults;
+        global $cuberta_defaults;
         ?>
     </head>
     <body <?php body_class(); ?>>
         <div id="wrapper-main">
             <?php
-            $menu = wp_nav_menu( array( 'theme_location'  => 'primary',
+            $cuberta_menu = wp_nav_menu( array( 'theme_location'  => 'primary',
                 'container'       => 'nav',
                 'container_class' => 'main-menu',
                 'container_id'    => '',
@@ -48,53 +49,53 @@
                 'depth'           => 0,
                 'walker'          => '' 
             ) );
-            if ( empty( $menu ) ) {
-                $menu = false;
+            if ( empty( $cuberta_menu ) ) {
+                $cuberta_menu = false;
             }
-            if ( get_theme_mod( 'cuberta_menu_home_button', $defaults['cuberta_menu_home_button'] ) ) {
-                $home = true;
+            if ( get_theme_mod( 'cuberta_menu_home_button', $cuberta_defaults['cuberta_menu_home_button'] ) ) {
+                $cuberta_home = true;
             } else {
-                $home = false;
+                $cuberta_home = false;
             }
-            if ( get_theme_mod( 'cuberta_menu_search_button', $defaults['cuberta_menu_search_button'] ) ) {
-                $search = true;
+            if ( get_theme_mod( 'cuberta_menu_search_button', $cuberta_defaults['cuberta_menu_search_button'] ) ) {
+                $cuberta_search = true;
             } else {
-                $search = false;
+                $cuberta_search = false;
             }
-            if ( get_theme_mod( 'cuberta_menu_login_button', $defaults['cuberta_menu_login_button'] ) ) {
-                $login = true;
+            if ( get_theme_mod( 'cuberta_menu_login_button', $cuberta_defaults['cuberta_menu_login_button'] ) ) {
+                $cuberta_login = true;
             } else {
-                $login = false;
+                $cuberta_login = false;
             }
-            if ( $home || $menu || $search || $login ) :
+            if ( $cuberta_home || $cuberta_menu || $cuberta_search || $cuberta_login ) :
             ?>
             <div class="cuberta-menu">
-                <?php if ( $home ) : ?>
+                <?php if ( $cuberta_home ) : ?>
                     <a href="/" class="home-button"><span><?php _e( 'Home', 'cuberta' ); ?></span></a>
                 <?php endif; ?>
-                <?php if ( !empty( $menu ) ) : ?>
+                <?php if ( !empty( $cuberta_menu ) ) : ?>
                     <a href="javascript:void(0)" class="menu-button"><span><?php _e( 'Menu', 'cuberta' ); ?></span></a>
                 <?php endif; ?>
-                <?php if ( $search ) : ?>
+                <?php if ( $cuberta_search ) : ?>
                     <a href="javascript:void(0)" class="search-button"><span><?php _e( 'Search', 'cuberta' ); ?></span></a>
                 <?php endif; ?>
                 <?php 
-                if ( $login ) : 
+                if ( $cuberta_login ) : 
                     if ( is_user_logged_in() ) {
-                        $link  = wp_logout_url( $_SERVER['REQUEST_URI'] );
-                        $class = "logout-button";
-                        $text  = __( "Logout", 'cuberta' );
+                        $cuberta_link  = wp_logout_url( $_SERVER['REQUEST_URI'] );
+                        $cuberta_class = "logout-button";
+                        $cuberta_text  = __( "Logout", 'cuberta' );
                     } else {
-                        $link  = wp_login_url( $_SERVER['REQUEST_URI'] );
-                        $class = "login-button";
-                        $text  = __( "Login", 'cuberta' );
+                        $cuberta_link  = wp_login_url( $_SERVER['REQUEST_URI'] );
+                        $cuberta_class = "login-button";
+                        $cuberta_text  = __( "Login", 'cuberta' );
                     }
                     ?>
-                    <a href="<?php echo $link; ?>" class="<?php echo $class; ?>"><span><?php echo $text; ?></span></a>
+                    <a href="<?php echo $cuberta_link; ?>" class="<?php echo $cuberta_class; ?>"><span><?php echo $cuberta_text; ?></span></a>
                 <?php 
                 endif;
-                echo $menu;
-                if ( $search ) : 
+                echo $cuberta_menu;
+                if ( $cuberta_search ) : 
                     get_search_form();
                 endif;
                 ?>
@@ -103,24 +104,24 @@
             <?php 
             endif;
             
-            if ( get_theme_mod( 'cuberta_site_identity', $defaults['cuberta_site_identity'] ) ) {
+            if ( get_theme_mod( 'cuberta_site_identity', $cuberta_defaults['cuberta_site_identity'] ) ) {
                 // https://core.trac.wordpress.org/ticket/37305
-                $site_identity  = '<div id="header-text" itemscope itemtype="http://schema.org/Brand">';
-                $site_identity .= get_custom_logo();
-                $site_identity .= '<h2><a href="' . home_url() . '">'. get_bloginfo( 'name' ) . '</a></h2>';
-                $site_identity .= '<div class="more">' . get_bloginfo( 'description' ) . '</div>';
-                $site_identity .= '</div>'; 
+                $cuberta_site_identity  = '<div id="header-text" itemscope itemtype="http://schema.org/Brand">';
+                $cuberta_site_identity .= get_custom_logo();
+                $cuberta_site_identity .= '<h2><a href="' . home_url() . '">'. get_bloginfo( 'name' ) . '</a></h2>';
+                $cuberta_site_identity .= '<div class="more">' . get_bloginfo( 'description' ) . '</div>';
+                $cuberta_site_identity .= '</div>'; 
             } else {
-                $site_identity = '';
+                $cuberta_site_identity = '';
             }
             
-            $header_image = '<header id="header-image">' . $site_identity . '</header>';
+            $cuberta_header_image = '<header id="header-image">' . $cuberta_site_identity . '</header>';
             if ( is_single() || is_page() ) {
                 if ( has_post_thumbnail() ) {
-                    $url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' );
-                    $header_image = '<header id="header-image" style="background: url(' . $url . ') 50% 50%;">' . $site_identity . '</header>';
+                    $cuberta_url = wp_get_attachment_url( get_post_thumbnail_id( $cuberta_post->ID ), 'post-thumbnail' );
+                    $cuberta_header_image = '<header id="header-image" style="background: url(' . $ucuberta_rl . ') 50% 50%;">' . $cuberta_site_identity . '</header>';
                 }
             }
-            echo $header_image;
+            echo $cuberta_header_image;
 
         ?>
