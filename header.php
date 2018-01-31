@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
-        <?php
-        if ( is_single() ) {
-            $cuberta_post = get_post( get_the_ID() );
-            if ( strlen( $cuberta_post->post_excerpt ) > 1 ) {
-                $cuberta_description = $cuberta_post->post_excerpt;
-            } else {
-                $cuberta_description = $cuberta_post->post_title;
-            }
-        } elseif ( is_page() ) {
-            $cuberta_post = get_post( get_the_ID() );
-            $cuberta_description = cuberta_make_excerpt( $cuberta_post->post_content );
-        } else {
-            $cuberta_description = get_bloginfo( 'name' );
-            $cuberta_description += " - ";
-            $cuberta_description += get_bloginfo( 'description' );
-        }
-        ?>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
-        <meta name="description" content="<?php echo $cuberta_description; ?>">
         <?php 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) == 1 ) {
         //if ( is_singular() ) { 
