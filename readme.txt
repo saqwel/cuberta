@@ -36,11 +36,139 @@ Cuberta bundles the following third-party resources:
 
 Font Awesome icons, Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
+Source: https://fontawesome.com/license
+
+Font Awesome fonts, Copyright Dave Gandy
+License: SIL OFL 1.1 License
+Source: https://fontawesome.com/license
+
+Font Awesome stylesheet, Copyright Dave Gandy
+License: MIT License
+Source: https://fontawesome.com/license
 
 Bundled header image
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://pxhere.com/en/photo/1015788
+
+Alegreya SC font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Alegreya+SC
+
+Amatic SC font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Amatic+SC
+
+Anonymous Pro font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Anonymous+Pro
+
+Bad Script font
+License: Open Font License
+Source:  https://fonts.google.com/specimen/Bad+Script
+
+Comfortaa font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Comfortaa
+
+Cormorant Garamond font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Cormorant+Garamond
+
+Cormorant Infant font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Cormorant+Infant
+
+Exo 2 font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Exo+2
+
+Gabriela font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Gabriela
+
+Jura font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Jura
+
+Kelly Slab font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Kelly+Slab
+
+Kurale font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Kurale
+
+Lobster font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Lobster
+
+Lora font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Lora
+
+Montserrat Alternates font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Montserrat+Alternates
+
+Neucha font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Neucha
+
+PT Mono font
+License: Open Font License
+Source: https://fonts.google.com/specimen/PT+Mono
+
+Pangolin font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Pangolin
+
+Pattaya font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Pattaya
+
+Playfair Display SC font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Playfair+Display+SC
+
+Poiret One font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Poiret+One
+
+Roboto font
+License: Apache License, Version 2.0
+Source: https://fonts.google.com/specimen/Roboto
+
+Ruslan Display font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Ruslan+Display
+
+Russo One font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Russo+One
+
+Seymour One font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Seymour+One
+
+Stalinist One font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Stalinist+One
+
+Ubuntu font
+License: Ubuntu Font License
+Source: https://fonts.google.com/specimen/Ubuntu
+
+Underdog font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Underdog
+
+Vollkorn font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Vollkorn
+
+Yanone Kaffeesatz font
+License: Open Font License
+Source: https://fonts.google.com/specimen/Yanone+Kaffeesatz
 
 == Changelog ==
 
