@@ -179,25 +179,6 @@ $cuberta_defaults = array(
     'cuberta_front_page_box_1'          => '',
     'cuberta_front_page_box_2'          => '',
     'cuberta_front_page_box_3'          => '',
-    'cuberta_contacts_city'             => '',
-    'cuberta_contacts_address'          => '',
-    'cuberta_contacts_phone_1'          => '',
-    'cuberta_contacts_phone_2'          => '',
-    'cuberta_contacts_email_1'          => '',
-    'cuberta_contacts_email_2'          => '',
-    'cuberta_contacts_skype'            => '',
-    'cuberta_contacts_fax'              => '',
-    'cuberta_social_facebook'           => '',
-    'cuberta_social_github'             => '',
-    'cuberta_social_gitlab'             => '',
-    'cuberta_social_google'             => '',
-    'cuberta_social_linkedin'           => '',
-    'cuberta_social_instagram'          => '',
-    'cuberta_social_pinterest'          => '',
-    'cuberta_social_twitter'            => '',
-    'cuberta_social_vimeo'              => '',
-    'cuberta_social_vk'                 => '',
-    'cuberta_social_youtube'            => '',
     'cuberta_menu_home_button'          => true,
     'cuberta_menu_bars_button'          => true,
     'cuberta_menu_search_button'        => true,
@@ -573,294 +554,6 @@ function cuberta_customize_register( $wp_customize ) {
     )
     );
 
-    // Contacts
-    $wp_customize->add_section( 'cuberta_contacts_section', array(
-        'title'    => 'Cuberta. ' . __( 'Footer contacts', 'cuberta' ),
-        'priority' => 77,
-    ) );
-    // City
-    $wp_customize->add_setting( 'cuberta_contacts_city', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_city'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_city', array(
-        'label'       => __( 'Country, city', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_city',
-    )
-    )
-    );
-    //Address
-    $wp_customize->add_setting( 'cuberta_contacts_address', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_address'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_address', array(
-        'label'       => __( 'Address', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_address',
-    )
-    )
-    );
-    // Phone
-    $wp_customize->add_setting( 'cuberta_contacts_phone_1', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_phone_1'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_phone_1', array(
-        'label'       => __( 'Phone', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_phone_1',
-    )
-    )
-    );
-    // Phone
-    $wp_customize->add_setting( 'cuberta_contacts_phone_2', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_phone_2'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_phone_2', array(
-        'label'       => __( 'Phone', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_phone_2',
-    )
-    )
-    );
-    // E-mail
-    $wp_customize->add_setting( 'cuberta_contacts_email_1', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_email_1'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_email_1', array(
-        'label'       => __( 'E-mail', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_email_1',
-    )
-    )
-    );
-    // E-mail
-    $wp_customize->add_setting( 'cuberta_contacts_email_2', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_email_2'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_email_2', array(
-        'label'       => __( 'E-mail', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_email_2',
-    )
-    )
-    );
-    // Skype
-    $wp_customize->add_setting( 'cuberta_contacts_skype', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_skype'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_skype', array(
-        'label'       => __( 'Skype', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_skype',
-    )
-    )
-    );
-    // Fax
-    $wp_customize->add_setting( 'cuberta_contacts_fax', array(
-        'default'           => $cuberta_defaults['cuberta_contacts_fax'],
-        'sanitize_callback' => 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_contacts_fax', array(
-        'label'       => __( 'Fax', 'cuberta' ),
-        'section'     => 'cuberta_contacts_section',
-        'settings'    => 'cuberta_contacts_fax',
-    )
-    )
-    );
-
-    // Social
-    $wp_customize->add_section( 'cuberta_social_section', array(
-        'title'    => 'Cuberta. ' . __( 'Footer social', 'cuberta' ),
-        'priority' => 79,
-    ) );
-    // Facebook
-    $wp_customize->add_setting( 'cuberta_social_facebook', array(
-        'default'           => $cuberta_defaults['cuberta_social_facebook'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_facebook', array(
-        'label'       => __( 'Facebook', 'cuberta' ),
-        'description' => __( 'Set full link of your facebook profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_facebook',
-    )
-    )
-    );
-    // Github
-    $wp_customize->add_setting( 'cuberta_social_github', array(
-        'default'           => $cuberta_defaults['cuberta_social_github'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_github', array(
-        'label'       => __( 'Github', 'cuberta' ),
-        'description' => __( 'Set full link of your github profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_github',
-    )
-    )
-    );
-    // Gitlab
-    $wp_customize->add_setting( 'cuberta_social_gitlab', array(
-        'default'           => $cuberta_defaults['cuberta_social_gitlab'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_gitlab', array(
-        'label'       => __( 'Gitlab', 'cuberta' ),
-        'description' => __( 'Set full link of your gitlab profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_gitlab',
-    )
-    )
-    );
-    // Google
-    $wp_customize->add_setting( 'cuberta_social_google', array(
-        'default'           => $cuberta_defaults['cuberta_social_google'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_google', array(
-        'label'       => __( 'Google plus', 'cuberta' ),
-        'description' => __( 'Set full link of your google plus profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_google',
-    )
-    )
-    );
-    // Instagram
-    $wp_customize->add_setting( 'cuberta_social_instagram', array(
-        'default'           => $cuberta_defaults['cuberta_social_instagram'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_instagram', array(
-        'label'       => __( 'Instagram', 'cuberta' ),
-        'description' => __( 'Set full link of your instagram profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_instagram',
-    )
-    )
-    );
-    // LinkedIn
-    $wp_customize->add_setting( 'cuberta_social_linkedin', array(
-        'default'           => $cuberta_defaults['cuberta_social_linkedin'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_linkedin', array(
-        'label'       => __( 'LinkedIn', 'cuberta' ),
-        'description' => __( 'Set full link of your linkedin profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_linkedin',
-    )
-    )
-    );
-    // Pinterest
-    $wp_customize->add_setting( 'cuberta_social_pinterest', array(
-        'default'           => $cuberta_defaults['cuberta_social_pinterest'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_pinterest', array(
-        'label'       => __( 'Pinterest', 'cuberta' ),
-        'description' => __( 'Set full link of your pinterest profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_pinterest',
-    )
-    )
-    );
-    // Twitter
-    $wp_customize->add_setting( 'cuberta_social_twitter', array(
-        'default'           => $cuberta_defaults['cuberta_social_twitter'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_twitter', array(
-        'label'       => __( 'Twitter', 'cuberta' ),
-        'description' => __( 'Set full link of your twitter profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_twitter',
-    )
-    )
-    );
-    // Vimeo
-    $wp_customize->add_setting( 'cuberta_social_vimeo', array(
-        'default'           => $cuberta_defaults['cuberta_social_vimeo'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_vimeo', array(
-        'label'       => __( 'Vimeo', 'cuberta' ),
-        'description' => __( 'Set full link of your vimeo profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_vimeo',
-    )
-    )
-    );
-    // VK
-    $wp_customize->add_setting( 'cuberta_social_vk', array(
-        'default'           => $cuberta_defaults['cuberta_social_vk'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_vk', array(
-        'label'       => __( 'VK', 'cuberta' ),
-        'description' => __( 'Set full link of your vk profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_vk',
-    )
-    )
-    );
-    // YouTube
-    $wp_customize->add_setting( 'cuberta_social_youtube', array(
-        'default'           => $cuberta_defaults['cuberta_social_youtube'],
-        'sanitize_callback' => 'esc_url'
-    ) );
-    $wp_customize->add_control(
-    new WP_Customize_Control(
-    $wp_customize, 'cuberta_social_youtube', array(
-        'label'       => __( 'YouTube', 'cuberta' ),
-        'description' => __( 'Set full link of your youtube profile', 'cuberta' ),
-        'section'     => 'cuberta_social_section',
-        'settings'    => 'cuberta_social_youtube',
-    )
-    )
-    );
     $sentence_1 = __( 'You can set four buttons in the header of Cuberta theme.', 'cuberta' );
     $sentence_2 = __( 'You have to assign some menu to Primary menu area to display Main menu button in the header. You can set other buttons visibility with checkboxes below.', 'cuberta' );
     $home   = __( 'Home', 'cuberta' );
@@ -1191,10 +884,10 @@ function cuberta_categorized_blog() {
     $all_the_cool_cats = count( $all_the_cool_cats );
 
     if ( $all_the_cool_cats > 1 ) {
-        // This blog has more than 1 category so twentyfifteen_categorized_blog should return true.
+        // This blog has more than 1 category so cuberta_categorized_blog should return true.
         return true;
     } else {
-        // This blog has only 1 category so twentyfifteen_categorized_blog should return false.
+        // This blog has only 1 category so cuberta_categorized_blog should return false.
         return false;
     }
 }
@@ -1209,10 +902,6 @@ function cuberta_add_span_cat_count( $links ) {
 
 add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
 
-
-// Shortcodes for widget text
-add_filter( 'widget_text', 'do_shortcode' );
-
 // Excerpts length
 $cuberta_excerpt_length = 20;
 
@@ -1226,17 +915,17 @@ add_filter( 'excerpt_length', 'cuberta_excerpt_length', 55 );
 // Make custom excerpts for pages on front page
 function cuberta_make_excerpt( $text ) {
     global $cuberta_excerpt_length;
-    $str   = '';
+    $excerpt_string   = '';
     $array = str_word_count( strip_tags( $text ), 1 );
     if ( count( $array ) > $excerpt_length ) {
         for ( $i = 0; $i < $excerpt_length; $i++ ) {
-            $str = $str . $array[ $i ] . " ";
+            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
         }
-        $str .= "...";
+        $excerpt_string .= "...";
     } else {
         for ( $i = 0; $i < count( $array ); $i++ ) {
-            $str = $str . $array[ $i ] . " ";
+            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
         }
     }
-    return $str;
+    return $excerpt_string;
 }
