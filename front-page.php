@@ -85,7 +85,8 @@ global $cuberta_defaults;
                                     <h3><a href="<?php echo esc_url( get_permalink( $cuberta_id_page ) ); ?>" rel="bookmark"><?php echo esc_html( $cuberta_post->post_title ); ?></a></h3>
                                 </header><!-- .entry-header -->
                                 <div class="entry-summary clearfix">
-                                    <?php echo cuberta_make_excerpt( $cuberta_post->post_content ); ?>
+                                    <?php //echo cuberta_make_excerpt( $cuberta_post->post_content ); ?>
+                                    <?php the_excerpt(); ?>
                                 </div><!-- .entry-content -->
                             <?php else : ?>
                                 <header>

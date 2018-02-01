@@ -901,7 +901,7 @@ function cuberta_add_span_cat_count( $links ) {
 }
 
 add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
-
+/*
 // Excerpts length
 $cuberta_excerpt_length = 20;
 
@@ -929,3 +929,4 @@ function cuberta_make_excerpt( $text ) {
     }
     return $excerpt_string;
 }
+*/
