@@ -777,6 +777,10 @@ class Cuberta_Walker_Comment extends Walker_Comment {
 
 // More link
 function cuberta_modify_read_more_link() {
+	if ( is_admin() ) {
+		return $link;
+    }
+    
     $link = esc_url( get_permalink() );
     $read = __( 'Read', 'cuberta' );
     return "<p class='more-link-button'><a class='more-link' href='$link'>$read</a></p>";
