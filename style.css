@@ -1081,7 +1081,7 @@ span.icon::before {
     width: auto;
 }
 
-.footer-item #search-2 {
+.footer-item .widget_search {
     padding: 20px 0;
 }
 
