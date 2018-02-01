@@ -71,7 +71,7 @@ global $cuberta_defaults;
                     <?php for ( $cuberta_i = 1; $cuberta_i <= 3; $cuberta_i++ ) { ?>
                         <?php $cuberta_box = 'cuberta_front_page_box_' . $cuberta_i; ?>
                         <article>
-                            <?php $cuberta_id_page = get_theme_mod( $cuberta_box, $cuberta_defaults[ $box ] ); ?>
+                            <?php $cuberta_id_page = get_theme_mod( $cuberta_box, $cuberta_defaults[ $cuberta_box ] ); ?>
                             <?php if ( $cuberta_id_page > 0 ) : ?>
                                 <?php $cuberta_post = get_post( $cuberta_id_page ); ?>
                                 <header>
