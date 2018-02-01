@@ -46,29 +46,29 @@ if ( post_password_required() ) {
 
     <?php 
 
-    $commenter = wp_get_current_commenter();
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $cuberta_commenter = wp_get_current_commenter();
+    $cuberta_req = get_option( 'require_name_email' );
+    $cuberta_aria_req = ( $cuberta_req ? " aria-required='true'" : '' );
 
-    $fields = array(
+    $cuberta_fields = array(
         'author' =>
             '<p class="comment-form-author"><label for="author">' . __( 'Name', 'cuberta' ) .
-            ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-            '" ' . $aria_req . ' /></p>',
+            ( $cuberta_req ? '<span class="required">*</span>' : '' ) . '</label>' .
+            '<input id="author" name="author" type="text" value="' . esc_attr( $cuberta_commenter['comment_author'] ) .
+            '" ' . $cuberta_aria_req . ' /></p>',
 
         'email' =>
             '<p class="comment-form-email"><label for="email">' . __( 'Email', 'cuberta' ) .
-            ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-            '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
-            '" ' . $aria_req . ' /></p>',
+            ( $cuberta_req ? '<span class="required">*</span>' : '' ) . '</label>' .
+            '<input id="email" name="email" type="text" value="' . esc_attr( $cuberta_commenter['comment_author_email'] ) .
+            '" ' . $cuberta_aria_req . ' /></p>',
 
         'url' =>
             '<p class="comment-form-url"><label for="url">' . __( 'Website', 'cuberta' ) . '</label>' .
-            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '<input id="url" name="url" type="text" value="' . esc_attr( $cuberta_commenter['comment_author_url'] ) .
             '" /></p>',
     );
-    comment_form( array( 'fields' => apply_filters( 'comment_form_default_fields', $fields ) ) );
+    comment_form( array( 'fields' => apply_filters( 'comment_form_default_fields', $cuberta_fields ) ) );
     ?>
 
 </div><!-- .comments-area -->

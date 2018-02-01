@@ -73,7 +73,7 @@
                         $cuberta_text  = __( "Login", 'cuberta' );
                     }
                     ?>
-                    <a href="<?php echo $cuberta_link; ?>" class="<?php echo $cuberta_class; ?>"><span><?php echo $cuberta_text; ?></span></a>
+                    <a href="<?php echo esc_url( $cuberta_link ); ?>" class="<?php echo esc_attr( $cuberta_class ); ?>"><span><?php echo esc_html( $cuberta_text ); ?></span></a>
                 <?php 
                 endif;
                 echo $cuberta_menu;
@@ -101,7 +101,7 @@
             if ( is_single() || is_page() ) {
                 if ( has_post_thumbnail() ) {
                     $cuberta_url = wp_get_attachment_url( get_post_thumbnail_id( $cuberta_post->ID ), 'post-thumbnail' );
-                    $cuberta_header_image = '<header id="header-image" style="background: url(' . $ucuberta_rl . ') 50% 50%;">' . $cuberta_site_identity . '</header>';
+                    $cuberta_header_image = '<header id="header-image" style="background: url(' . esc_url( $cuberta_url ) . ') 50% 50%;">' . $cuberta_site_identity . '</header>';
                 }
             }
             echo $cuberta_header_image;

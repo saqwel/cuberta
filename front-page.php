@@ -26,8 +26,8 @@ global $cuberta_defaults;
                 $cuberta_id_page_welcome = get_theme_mod( 'cuberta_front_page_welcome', $cuberta_defaults['cuberta_front_page_welcome'] );
                 if ( $cuberta_id_page_welcome > 0 ) :
                     $cuberta_post      = get_post( $cuberta_id_page_welcome );
-                    $cuberta_posttitle = esc_html( $cuberta_post->post_title );
-                    echo "<h2>$cuberta_posttitle</h2>";
+                    $cuberta_post_title = esc_html( $cuberta_post->post_title );
+                    echo "<h2>$cuberta_post_title</h2>";
                     ?>
                     <div class="entry-content">
                         <?php
@@ -77,7 +77,7 @@ global $cuberta_defaults;
                                 <header>
                                     <?php if ( has_post_thumbnail() ) : ?>
                                         <p>
-                                            <a title="<?php echo $cuberta_post->post_title; ?>" href="<?php the_permalink(); ?>">
+                                            <a title="<?php echo $cuberta_post->post_title; ?>" href="<?php esc_url( the_permalink() ); ?>">
                                                 <?php the_post_thumbnail(); ?>
                                             </a>
                                         </p>
@@ -91,7 +91,7 @@ global $cuberta_defaults;
                             <?php else : ?>
                                 <header>
                                     <?php $cuberta_j = $cuberta_i-1; ?>
-                                    <h3 class="entry-icon <?php echo $cuberta_icons_array[ $cuberta_j ]; ?>"><?php echo $cuberta_titles_array[ $cuberta_j ]; ?></h3>
+                                    <h3 class="entry-icon <?php echo esc_attr( $cuberta_icons_array[ $cuberta_j ] ); ?>"><?php echo esc_html( $cuberta_titles_array[ $cuberta_j ] ); ?></h3>
                                 </header>
                                 <div class="entry-summary clearfix">
                                     <p><?php echo $cuberta_bodies_array[ $cuberta_j ]; ?><p>

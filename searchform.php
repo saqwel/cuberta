@@ -11,7 +11,7 @@
 
 <div class="search">
     <form method="get" class="search-form" action="/">
-        <input class="search-field" placeholder="" value="<?php the_search_query(); ?>" name="s" type="search">
+        <input class="search-field" placeholder="" value="<?php sanitize_text_field( the_search_query() ); ?>" name="s" type="search">
         <div class="search-submit-parent"><input class="search-submit" value="" name="search-submit" type="submit"></div>
     </form>
 </div>

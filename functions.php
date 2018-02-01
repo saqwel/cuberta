@@ -29,14 +29,14 @@ if ( !function_exists( 'cuberta_theme_setup' ) ) :
 
         // Header image
         $args = array( 
-            'default-image' => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
+            'default-image' => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
             'header-text'   => false 
         );
         add_theme_support( 'custom-header', $args );
         register_default_headers( array(
             'default-image' => array(
-                'url'           => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
-                'thumbnail_url' => get_stylesheet_directory_uri() . '/images/cuberta-main.jpg',
+                'url'           => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
+                'thumbnail_url' => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
                 'description'   => __( 'Default Header Image', 'cuberta' )
             ),
         ) );
@@ -135,7 +135,7 @@ function cuberta_page_builder() {
 add_action( 'wp_enqueue_scripts', 'cuberta_page_builder' );
 
 // Sanitize checkbox
-function cuberta_sanitize_chechbox( $value ) {
+function cuberta_sanitize_checkbox( $value ) {
     if ( $value === true || $value === false ) {
         return $value;
     } else {
@@ -198,7 +198,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Display or not site identity
     $wp_customize->add_setting( 'cuberta_site_identity', array(
         'default'           => $cuberta_defaults['cuberta_site_identity'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox'
+        'sanitize_callback' => 'cuberta_sanitize_checkbox'
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -380,6 +380,38 @@ function cuberta_customize_register( $wp_customize ) {
     );
 
     // Fonts
+    $cuberta_fonts_array = array(
+        'Alegreya SC'           => 'Alegreya SC',
+        'Amatic SC'             => 'Amatic SC',
+        'Anonymous Pro'         => 'Anonymous Pro',
+        'Bad Script'            => 'Bad Script',
+        'Comfortaa'             => 'Comfortaa',
+        'Cormorant Garamond'    => 'Cormorant Garamond',
+        'Cormorant Infant'      => 'Cormorant Infant',
+        'Exo 2'                 => 'Exo 2',
+        'Gabriela'              => 'Gabriela',
+        'Jura'                  => 'Jura',
+        'Kelly Slab'            => 'Kelly Slab',
+        'Kurale'                => 'Kurale',
+        'Lobster'               => 'Lobster',
+        'Lora'                  => 'Lora',
+        'Montserrat Alternates' => 'Montserrat Alternates',
+        'Neucha'                => 'Neucha',
+        'PT Mono'               => 'PT Mono',
+        'Pangolin'              => 'Pangolin',
+        'Pattaya'               => 'Pattaya',
+        'Playfair Display SC'   => 'Playfair Display SC',
+        'Poiret One'            => 'Poiret One',
+        'Roboto'                => 'Roboto',
+        'Ruslan Display'        => 'Ruslan Display',
+        'Russo One'             => 'Russo One',
+        'Seymour One'           => 'Seymour One',
+        'Stalinist One'         => 'Stalinist One',
+        'Ubuntu'                => 'Ubuntu',
+        'Underdog'              => 'Underdog',
+        'Vollkorn'              => 'Vollkorn',
+        'Yanone Kaffeesatz'     => 'Yanone Kaffeesatz'
+    );
     $wp_customize->add_setting( 'cuberta_site_header_font', array(
         'default'           => $cuberta_defaults['cuberta_site_header_font'],
         'sanitize_callback' => 'sanitize_text_field'
@@ -395,38 +427,7 @@ function cuberta_customize_register( $wp_customize ) {
         'section'  => 'cuberta_site_header_font_section',
         'settings' => 'cuberta_site_header_font',
         'type'     => 'select',
-        'choices'  => array(
-            'Alegreya SC'           => 'Alegreya SC',
-            'Amatic SC'             => 'Amatic SC',
-            'Anonymous Pro'         => 'Anonymous Pro',
-            'Bad Script'            => 'Bad Script',
-            'Comfortaa'             => 'Comfortaa',
-            'Cormorant Garamond'    => 'Cormorant Garamond',
-            'Cormorant Infant'      => 'Cormorant Infant',
-            'Exo 2'                 => 'Exo 2',
-            'Gabriela'              => 'Gabriela',
-            'Jura'                  => 'Jura',
-            'Kelly Slab'            => 'Kelly Slab',
-            'Kurale'                => 'Kurale',
-            'Lobster'               => 'Lobster',
-            'Lora'                  => 'Lora',
-            'Montserrat Alternates' => 'Montserrat Alternates',
-            'Neucha'                => 'Neucha',
-            'PT Mono'               => 'PT Mono',
-            'Pangolin'              => 'Pangolin',
-            'Pattaya'               => 'Pattaya',
-            'Playfair Display SC'   => 'Playfair Display SC',
-            'Poiret One'            => 'Poiret One',
-            'Roboto'                => 'Roboto',
-            'Ruslan Display'        => 'Ruslan Display',
-            'Russo One'             => 'Russo One',
-            'Seymour One'           => 'Seymour One',
-            'Stalinist One'         => 'Stalinist One',
-            'Ubuntu'                => 'Ubuntu',
-            'Underdog'              => 'Underdog',
-            'Vollkorn'              => 'Vollkorn',
-            'Yanone Kaffeesatz'     => 'Yanone Kaffeesatz'
-        )
+        'choices'  => $cuberta_fonts_array
     )
     )
     );
@@ -441,38 +442,7 @@ function cuberta_customize_register( $wp_customize ) {
         'section'  => 'cuberta_site_header_font_section',
         'settings' => 'cuberta_all_headers_font',
         'type'     => 'select',
-        'choices'  => array(
-            'Alegreya SC'           => 'Alegreya SC',
-            'Amatic SC'             => 'Amatic SC',
-            'Anonymous Pro'         => 'Anonymous Pro',
-            'Bad Script'            => 'Bad Script',
-            'Comfortaa'             => 'Comfortaa',
-            'Cormorant Garamond'    => 'Cormorant Garamond',
-            'Cormorant Infant'      => 'Cormorant Infant',
-            'Exo 2'                 => 'Exo 2',
-            'Gabriela'              => 'Gabriela',
-            'Jura'                  => 'Jura',
-            'Kelly Slab'            => 'Kelly Slab',
-            'Kurale'                => 'Kurale',
-            'Lobster'               => 'Lobster',
-            'Lora'                  => 'Lora',
-            'Montserrat Alternates' => 'Montserrat Alternates',
-            'Neucha'                => 'Neucha',
-            'PT Mono'               => 'PT Mono',
-            'Pangolin'              => 'Pangolin',
-            'Pattaya'               => 'Pattaya',
-            'Playfair Display SC'   => 'Playfair Display SC',
-            'Poiret One'            => 'Poiret One',
-            'Roboto'                => 'Roboto',
-            'Ruslan Display'        => 'Ruslan Display',
-            'Russo One'             => 'Russo One',
-            'Seymour One'           => 'Seymour One',
-            'Stalinist One'         => 'Stalinist One',
-            'Ubuntu'                => 'Ubuntu',
-            'Underdog'              => 'Underdog',
-            'Vollkorn'              => 'Vollkorn',
-            'Yanone Kaffeesatz'     => 'Yanone Kaffeesatz'
-        )
+        'choices'  => $cuberta_fonts_array
     )
     )
     );
@@ -485,7 +455,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Show/hide welcome text
     $wp_customize->add_setting( 'cuberta_front_page_welcome_show', array(
         'default'           => $cuberta_defaults['cuberta_front_page_welcome_show'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox',
+        'sanitize_callback' => 'cuberta_sanitize_checkbox',
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -512,7 +482,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Show/hide welcome boxes
     $wp_customize->add_setting( 'cuberta_front_page_boxes_show', array(
         'default'           => $cuberta_defaults['cuberta_front_page_boxes_show'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox',
+        'sanitize_callback' => 'cuberta_sanitize_checkbox',
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -542,7 +512,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Show/hide welcome boxes
     $wp_customize->add_setting( 'cuberta_front_page_latest_show', array(
         'default'           => $cuberta_defaults['cuberta_front_page_latest_show'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox',
+        'sanitize_callback' => 'cuberta_sanitize_checkbox',
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -571,7 +541,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Display Home Button
     $wp_customize->add_setting( 'cuberta_menu_home_button', array(
         'default'           => $cuberta_defaults['cuberta_menu_home_button'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox',
+        'sanitize_callback' => 'cuberta_sanitize_checkbox',
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -587,7 +557,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Display Search Button
     $wp_customize->add_setting( 'cuberta_menu_search_button', array(
         'default'           => $cuberta_defaults['cuberta_menu_search_button'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox'
+        'sanitize_callback' => 'cuberta_sanitize_checkbox'
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -603,7 +573,7 @@ function cuberta_customize_register( $wp_customize ) {
     // Display Login Button
     $wp_customize->add_setting( 'cuberta_menu_login_button', array(
         'default'           => $cuberta_defaults['cuberta_menu_login_button'],
-        'sanitize_callback' => 'cuberta_sanitize_chechbox'
+        'sanitize_callback' => 'cuberta_sanitize_checkbox'
     ) );
     $wp_customize->add_control(
     new WP_Customize_Control(
@@ -777,11 +747,11 @@ class Cuberta_Walker_Comment extends Walker_Comment {
 
 // More link
 function cuberta_modify_read_more_link() {
+    $link = esc_url( get_permalink() );
 	if ( is_admin() ) {
 		return $link;
     }
     
-    $link = esc_url( get_permalink() );
     $read = __( 'Read', 'cuberta' );
     return "<p class='more-link-button'><a class='more-link' href='$link'>$read</a></p>";
 }

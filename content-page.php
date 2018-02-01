@@ -17,7 +17,7 @@
     <?php
     if ( !is_home() ) {
         if ( has_post_thumbnail() ) {
-            $url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' );
+            $url = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) );
             echo "<style>#img {background: url($url) 50% 50%;}</style>";
         }
     }
