@@ -90,7 +90,7 @@
                 // https://core.trac.wordpress.org/ticket/37305
                 $cuberta_site_identity  = '<div id="header-text" itemscope itemtype="http://schema.org/Brand">';
                 $cuberta_site_identity .= get_custom_logo();
-                $cuberta_site_identity .= '<h2><a href="' . home_url() . '">'. get_bloginfo( 'name' ) . '</a></h2>';
+                $cuberta_site_identity .= '<h2><a href="' . esc_url( home_url() ) . '">'. get_bloginfo( 'name' ) . '</a></h2>';
                 $cuberta_site_identity .= '<div class="more">' . get_bloginfo( 'description' ) . '</div>';
                 $cuberta_site_identity .= '</div>'; 
             } else {
