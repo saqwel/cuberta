@@ -60,11 +60,13 @@ function cuberta_add_fontawesome_fonts() {
 
 add_action( 'wp_enqueue_scripts', 'cuberta_add_fontawesome_fonts' );
 */
-// Custom style
-function cuberta_add_editor_styles() {
-    add_editor_style();
-}
 
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function cuberta_add_editor_styles() {
+    add_editor_style( 'cuberta-editor-style.css' );
+}
 add_action( 'admin_init', 'cuberta_add_editor_styles' );
 
 function cuberta_header_sidebar() {
@@ -117,7 +119,7 @@ function cuberta_header_sidebar() {
 
 add_action( 'widgets_init', 'cuberta_header_sidebar' );
 
-
+// Scripts and stylesheets
 function cuberta_page_builder() {
     wp_enqueue_script(
     'cuberta-menu', get_template_directory_uri() . '/js/cuberta-menu.js', array( 'jquery' )
@@ -128,7 +130,6 @@ function cuberta_page_builder() {
     wp_enqueue_style( 'cuberta-google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+SC|Amatic+SC|Anonymous+Pro|Bad+Script|Comfortaa|Cormorant+Garamond|Cormorant+Infant|Exo+2|Gabriela|Jura|Kelly+Slab|Kurale|Lobster|Lora|Montserrat+Alternates|Neucha|PT+Mono|Pangolin|Pattaya|Playfair+Display+SC|Poiret+One|Roboto|Ruslan+Display|Russo+One|Seymour+One|Stalinist+One|Ubuntu|Underdog|Vollkorn|Yanone+Kaffeesatz&amp;subset=cyrillic', false ); 
     wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
     wp_enqueue_style( 'cuberta-main-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'cuberta-editor-style', get_template_directory_uri() . '/editor-style.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'cuberta_page_builder' );
@@ -901,32 +902,3 @@ function cuberta_add_span_cat_count( $links ) {
 }
 
 add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
-/*
-// Excerpts length
-$cuberta_excerpt_length = 20;
-
-function cuberta_excerpt_length( $length ) {
-    global $cuberta_excerpt_length;
-    return $cuberta_excerpt_length;
-}
-
-add_filter( 'excerpt_length', 'cuberta_excerpt_length', 55 );
-
-// Make custom excerpts for pages on front page
-function cuberta_make_excerpt( $text ) {
-    global $cuberta_excerpt_length;
-    $excerpt_string   = '';
-    $array = str_word_count( strip_tags( $text ), 1 );
-    if ( count( $array ) > $excerpt_length ) {
-        for ( $i = 0; $i < $excerpt_length; $i++ ) {
-            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
-        }
-        $excerpt_string .= "...";
-    } else {
-        for ( $i = 0; $i < count( $array ); $i++ ) {
-            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
-        }
-    }
-    return $excerpt_string;
-}
-*/
