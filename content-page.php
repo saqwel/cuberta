@@ -14,14 +14,6 @@
     <header class="entry-header">
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </header><!-- .entry-header -->
-    <?php
-    if ( !is_home() ) {
-        if ( has_post_thumbnail() ) {
-            $url = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) );
-            echo "<style>#img {background: url($url) 50% 50%;}</style>";
-        }
-    }
-    ?>
     <div class="entry-content">
         <?php
         /* translators: %s: Name of current post */

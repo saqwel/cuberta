@@ -23,7 +23,11 @@ if ( post_password_required() ) {
 
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
-            <?php printf( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'Comments title', 'cuberta' ), number_format_i18n( get_comments_number() ) ); ?>
+            <?php
+            /* translators: This is the title of comment section */
+            $cubert_comment_title = sprintf( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'Comments title', 'cuberta' ), number_format_i18n( get_comments_number() ) );
+            echo esc_html( $cubert_comment_title );
+            ?>
         </h2>
 
         <div class="comment-list">
@@ -39,7 +43,7 @@ if ( post_password_required() ) {
     <?php endif; // have_comments()  ?>
 
     <?php if ( !comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-        <p class="no-comments"><?php _e( 'Comments are closed.', 'cuberta' ); ?></p>
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'cuberta' ); ?></p>
     <?php endif; ?>
 
     <div class="nav-links"><?php paginate_comments_links( array( 'prev_text' => '', 'next_text' => '' ) ); ?></div>

@@ -1,4 +1,9 @@
 <?php
+
+if ( ! isset( $content_width ) ) {
+    $content_width = 900;
+}
+
 if ( !function_exists( 'cuberta_theme_setup' ) ) :
 
     function cuberta_theme_setup() {
@@ -601,9 +606,9 @@ function cuberta_customize_css() {
         #header-text h5 a,
         #header-text h6 a {
             <?php
-            $fontfamily = get_theme_mod( 'cuberta_site_header_font', $cuberta_defaults['cuberta_site_header_font'] );
-            if ( '' !== $fontfamily ) {
-                echo "font-family: '$fontfamily';";
+            $font_family = get_theme_mod( 'cuberta_site_header_font', $cuberta_defaults['cuberta_site_header_font'] );
+            if ( '' !== $font_family ) {
+                echo "font-family: '$font_family';";
             }
             ?>
             color: <?php echo get_theme_mod( 'cuberta_site_header_color', $cuberta_defaults['cuberta_site_header_color'] ); ?>;
@@ -626,9 +631,9 @@ function cuberta_customize_css() {
         h5 a,
         h6 a {
             <?php
-            $fontfamily = get_theme_mod( 'cuberta_all_headers_font', $cuberta_defaults['cuberta_all_headers_font'] );
-            if ( '' !== $fontfamily ) {
-                echo "font-family: '$fontfamily';";
+            $font_family = get_theme_mod( 'cuberta_all_headers_font', $cuberta_defaults['cuberta_all_headers_font'] );
+            if ( '' !== $font_family ) {
+                echo "font-family: '$font_family';";
             }
             ?>
             color: <?php echo get_theme_mod( 'cuberta_all_headers_color', $cuberta_defaults['cuberta_all_headers_color'] ); ?>;
@@ -876,3 +881,21 @@ function cuberta_add_span_cat_count( $links ) {
 }
 
 add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
+
+
+// Make custom excerpts for pages on front page
+function cuberta_make_excerpt( $text, $excerpt_length ) {
+    $excerpt_string = '';
+    $array = str_word_count( strip_tags( $text ), 1 );
+    if ( count( $array ) > $excerpt_length ) {
+        for ( $i = 0; $i < $excerpt_length; $i++ ) {
+            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
+        }
+        $excerpt_string .= "...";
+    } else {
+        for ( $i = 0; $i < count( $array ); $i++ ) {
+            $excerpt_string = $excerpt_string . $array[ $i ] . " ";
+        }
+    }
+    return $excerpt_string;
+}

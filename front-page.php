@@ -25,22 +25,21 @@ global $cuberta_defaults;
                 <?php
                 $cuberta_id_page_welcome = get_theme_mod( 'cuberta_front_page_welcome', $cuberta_defaults['cuberta_front_page_welcome'] );
                 if ( $cuberta_id_page_welcome > 0 ) :
-                    $cuberta_post      = get_post( $cuberta_id_page_welcome );
+                    $cuberta_post       = get_post( $cuberta_id_page_welcome );
                     $cuberta_post_title = esc_html( $cuberta_post->post_title );
-                    echo "<h2>$cuberta_post_title</h2>";
                     ?>
+                    <h2><?php echo esc_html( $cuberta_post_title ); ?></h2>
                     <div class="entry-content">
                         <?php
                         $cuberta_content = $cuberta_post->post_content;
-                        $cuberta_content = apply_filters( 'the_content', $cuberta_content );
-                        echo $content;
+                        echo wp_kses( apply_filters( 'the_content', $cuberta_content ), 'post' );
                         ?>
                     </div><!-- .entry-content -->
                     <?php else : ?>
-                    <h2><?php _e( 'Welcome text', 'cuberta' ); ?></h2>
+                    <h2><?php esc_html_e( 'Welcome text', 'cuberta' ); ?></h2>
                     <div class="entry-summary clearfix">
                         <p>
-                            <?php _e( "Cuberta is WordPress theme. Theme which fully uses entire width of the page, depending on the size of the screen. Site administrator can customize color scheme, headers fonts, replace front page items with widgets. Theme contains built-in main menu, social menu, front page.", 'cuberta' ); ?>
+                            <?php esc_html_e( "Cuberta is WordPress theme. Theme which fully uses entire width of the page, depending on the size of the screen. Site administrator can customize color scheme, headers fonts, replace front page items with widgets. Theme contains built-in main menu, social menu, front page.", 'cuberta' ); ?>
                         </p>
                     </div><!-- .entry-content -->
                 <?php endif; ?>
@@ -56,11 +55,13 @@ global $cuberta_defaults;
             <!-- Featered three boxes -->
             <div id="front-featured">
                 <?php
-                $cuberta_titles_array = array( __( 'Color scheme', 'cuberta' ),
+                $cuberta_titles_array = array( 
+                    __( 'Color scheme', 'cuberta' ),
                     __( 'Headers fonts', 'cuberta' ),
                     __( 'Front page', 'cuberta' )
                 );
-                $cuberta_bodies_array = array( __( 'Administrator can customize most of site elements colors.', 'cuberta' ),
+                $cuberta_bodies_array = array( 
+                    __( 'Administrator can customize most of site elements colors.', 'cuberta' ),
                     __( 'Site administrator can select one of 30 fonts for displaying headers.', 'cuberta' ),
                     __( 'Any front page layout may be hidden and replaced by widget.', 'cuberta' )
                 );
@@ -73,20 +74,20 @@ global $cuberta_defaults;
                         <article>
                             <?php $cuberta_id_page = get_theme_mod( $cuberta_box, $cuberta_defaults[ $cuberta_box ] ); ?>
                             <?php if ( $cuberta_id_page > 0 ) : ?>
-                                <?php $cuberta_post = get_post( $cuberta_id_page ); ?>
+                                <?php $post = get_post( $cuberta_id_page ); ?>
                                 <header>
                                     <?php if ( has_post_thumbnail() ) : ?>
                                         <p>
-                                            <a title="<?php echo $cuberta_post->post_title; ?>" href="<?php esc_url( the_permalink() ); ?>">
+                                            <a title="<?php echo esc_attr( $post->post_title ); ?>" href="<?php esc_url( the_permalink() ); ?>">
                                                 <?php the_post_thumbnail(); ?>
                                             </a>
                                         </p>
                                     <?php endif; ?>
-                                    <h3><a href="<?php echo esc_url( get_permalink( $cuberta_id_page ) ); ?>" rel="bookmark"><?php echo esc_html( $cuberta_post->post_title ); ?></a></h3>
+                                    <h3><a href="<?php echo esc_url( get_permalink( $cuberta_id_page ) ); ?>" rel="bookmark"><?php echo esc_html( $post->post_title ); ?></a></h3>
                                 </header><!-- .entry-header -->
                                 <div class="entry-summary clearfix">
-                                    <?php //echo cuberta_make_excerpt( $cuberta_post->post_content ); ?>
-                                    <?php the_excerpt(); ?>
+                                    <?php echo wp_kses( cuberta_make_excerpt( $post->post_content, 22 ), 'post' ); ?>
+                                    
                                 </div><!-- .entry-content -->
                             <?php else : ?>
                                 <header>
@@ -94,7 +95,7 @@ global $cuberta_defaults;
                                     <h3 class="entry-icon <?php echo esc_attr( $cuberta_icons_array[ $cuberta_j ] ); ?>"><?php echo esc_html( $cuberta_titles_array[ $cuberta_j ] ); ?></h3>
                                 </header>
                                 <div class="entry-summary clearfix">
-                                    <p><?php echo $cuberta_bodies_array[ $cuberta_j ]; ?><p>
+                                    <p><?php echo esc_html( $cuberta_bodies_array[ $cuberta_j ] ); ?><p>
                                 </div>
                             <?php endif; ?>
                         </article>
@@ -111,7 +112,6 @@ global $cuberta_defaults;
         <?php if ( get_theme_mod( 'cuberta_front_page_latest_show', $cuberta_defaults['cuberta_front_page_latest_show'] ) ) : ?>
             <!-- Latest posts -->
             <div id="front-latest">
-                <!--h2><?php _e( 'Latest posts', 'cuberta' ); ?></h2-->
                 <?php
                 if ( have_posts() ) :
                     //query_posts();
