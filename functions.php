@@ -85,6 +85,7 @@ function cuberta_header_sidebar() {
         'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
+        /* translators: %s is a serial number of a widget area */
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '1' ),
         'id'            => 'cuberta-fpwa-1',
         'description'   => __( 'This widget area is the highest front page widget area.', 'cuberta' ),
@@ -94,6 +95,7 @@ function cuberta_header_sidebar() {
         'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
+        /* translators: %s is a serial number of a widget area */
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '2' ),
         'id'            => 'cuberta-fpwa-2',
         'description'   => __( 'This widget is between Welcome text and Three boxes area.', 'cuberta' ),
@@ -103,6 +105,7 @@ function cuberta_header_sidebar() {
         'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
+        /* translators: %s is a serial number of a widget area */
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '3' ),
         'id'            => 'cuberta-fpwa-3',
         'description'   => __( 'This widget area is between Three boxes area and Latest posts area.', 'cuberta' ),
@@ -112,6 +115,7 @@ function cuberta_header_sidebar() {
         'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
+        /* translators: %s is a serial number of a widget area */
         'name'          => sprintf( __( 'Front Page Widget Area %s', 'cuberta' ), '4' ),
         'id'            => 'cuberta-fpwa-4',
         'description'   => __( 'This widget area is a last widget area of the front page.', 'cuberta' ),
@@ -507,6 +511,7 @@ function cuberta_customize_register( $wp_customize ) {
             'sanitize_callback' => 'cuberta_sanitize_integer',
         ) );
         $wp_customize->add_control( 'cuberta_front_page_box_control_' . $i, array(
+            /* translators: %d is a serial number of front page box */
             'label'    => sprintf( __( 'Front page box %d', 'cuberta' ), $i ),
             'section'  => 'cuberta_front_page_section',
             'type'     => 'dropdown-pages',
@@ -608,14 +613,14 @@ function cuberta_customize_css() {
             <?php
             $font_family = get_theme_mod( 'cuberta_site_header_font', $cuberta_defaults['cuberta_site_header_font'] );
             if ( '' !== $font_family ) {
-                echo "font-family: '$font_family';";
+                echo esc_html( "font-family: '$font_family';" );
             }
             ?>
-            color: <?php echo get_theme_mod( 'cuberta_site_header_color', $cuberta_defaults['cuberta_site_header_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_site_header_color', $cuberta_defaults['cuberta_site_header_color'] ) ); ?>;
         }
 
         .more {
-            color: <?php echo get_theme_mod( 'cuberta_site_description_color', $cuberta_defaults['cuberta_site_description_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_site_description_color', $cuberta_defaults['cuberta_site_description_color'] ) ); ?>;
         }
 
         h1,
@@ -633,10 +638,10 @@ function cuberta_customize_css() {
             <?php
             $font_family = get_theme_mod( 'cuberta_all_headers_font', $cuberta_defaults['cuberta_all_headers_font'] );
             if ( '' !== $font_family ) {
-                echo "font-family: '$font_family';";
+                echo esc_html( "font-family: '$font_family';" );
             }
             ?>
-            color: <?php echo get_theme_mod( 'cuberta_all_headers_color', $cuberta_defaults['cuberta_all_headers_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_all_headers_color', $cuberta_defaults['cuberta_all_headers_color'] ) ); ?>;
         }
 
         .cuberta-menu .search-submit,
@@ -644,7 +649,7 @@ function cuberta_customize_css() {
         .cuberta-menu li::after,
         .main-menu li::after,
         .main-menu a {
-            color: <?php echo get_theme_mod( 'cuberta_menu_color', $cuberta_defaults['cuberta_menu_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_menu_color', $cuberta_defaults['cuberta_menu_color'] ) ); ?>;
         }
 
         .footer-item div,
@@ -652,7 +657,7 @@ function cuberta_customize_css() {
         .footer-item div a,
         .footer-item div span,
         .footer-item div .search-submit {
-            color: <?php echo get_theme_mod( 'cuberta_footer_color', $cuberta_defaults['cuberta_footer_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_footer_color', $cuberta_defaults['cuberta_footer_color'] ) ); ?>;
         }
         
         .footer-item h1,
@@ -661,28 +666,28 @@ function cuberta_customize_css() {
         .footer-item h4,
         .footer-item h5,
         .footer-item h6 {
-            color: <?php echo get_theme_mod( 'cuberta_footer_headers_color', $cuberta_defaults['cuberta_footer_headers_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_footer_headers_color', $cuberta_defaults['cuberta_footer_headers_color'] ) ); ?>;
         }
         
         .entry-meta div {
-            color: <?php echo get_theme_mod( 'cuberta_meta_text_color', $cuberta_defaults['cuberta_meta_text_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_meta_text_color', $cuberta_defaults['cuberta_meta_text_color'] ) ); ?>;
         }
         
         .entry-meta a,
         .entry-meta time {
-            color: <?php echo get_theme_mod( 'cuberta_meta_links_color', $cuberta_defaults['cuberta_meta_links_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_meta_links_color', $cuberta_defaults['cuberta_meta_links_color'] )); ?>;
         }
 
         a {
-            color: <?php echo get_theme_mod( 'cuberta_links_color', $cuberta_defaults['cuberta_links_color'] ); ?>;
+            color: <?php echo esc_html( get_theme_mod( 'cuberta_links_color', $cuberta_defaults['cuberta_links_color'] ) ); ?>;
         }
 
         .cuberta-menu {
-            background: <?php echo get_theme_mod( 'cuberta_menu_background', $cuberta_defaults['cuberta_menu_background'] ); ?>;
+            background: <?php echo esc_html( get_theme_mod( 'cuberta_menu_background', $cuberta_defaults['cuberta_menu_background'] ) ); ?>;
         }
 
         .footer-item {
-            background: <?php echo get_theme_mod( 'cuberta_footer_background', $cuberta_defaults['cuberta_footer_background'] ); ?> ;
+            background: <?php echo esc_html( get_theme_mod( 'cuberta_footer_background', $cuberta_defaults['cuberta_footer_background'] ) ); ?> ;
         }
         
         #header-image {
@@ -705,7 +710,19 @@ function cuberta_format_comment( $comment, $args, $depth ) {
             <?php $avatar = get_avatar( $comment, $args['avatar_size'] ); ?>
             <?php if ( 0!=strlen( $avatar ) ) : ?>
             <div class="comment-meta-avatar">
-                <?php echo $avatar; ?>
+                <?php 
+                $cuberta_avatar_html_allow = array(
+                    'img' => array(
+                        'width' => array(),
+                        'height' => array(),
+                        'src' => array(),
+                        'class' => array(),
+                        'alt' => array(),
+                        'srcset' => array()
+                    ),
+                );
+                echo wp_kses( $avatar, $cuberta_avatar_html_allow );
+                ?>
             </div>
             <?php endif; ?>
             <div class="comment-meta-text">
@@ -715,7 +732,7 @@ function cuberta_format_comment( $comment, $args, $depth ) {
         </div>
 
         <?php if ( $comment->comment_approved == '0' ) : ?>
-            <div><?php _e( 'Your comment is awaiting moderation.', 'cuberta' ); ?></div>
+            <div><?php esc_html_e( 'Your comment is awaiting moderation.', 'cuberta' ); ?></div>
         <?php endif; ?>
 
         <?php comment_text(); ?>
@@ -770,12 +787,12 @@ if ( !function_exists( 'cuberta_entry_meta' ) ) :
 
     function cuberta_entry_meta() {
         if ( is_sticky() && is_home() && !is_paged() ) {
-            printf( '<div class="featured">%s</div> ', __( 'Featured', 'cuberta' ) );
+            printf( '<div class="featured">%s</div> ', esc_html__( 'Featured', 'cuberta' ) );
         }
 
         $format = get_post_format();
         if ( current_theme_supports( 'post-formats', $format ) ) {
-            printf( '<div class="entry-format">%1$s: <a href="%2$s">%3$s</a></div>', sprintf( '<span>%s </span>', _x( 'Format', 'Used before post format.', 'cuberta' ) ), esc_url( get_post_format_link( $format ) ), get_post_format_string( $format )
+            printf( '<div class="entry-format">%1$s: <a href="%2$s">%3$s</a></div>', sprintf( '<span>%s </span>', esc_html( _x( 'Format', 'Used before post format.', 'cuberta' ) ) ), esc_url( get_post_format_link( $format ) ), esc_html( get_post_format_string( $format ) )
             );
         }
 
@@ -786,25 +803,25 @@ if ( !function_exists( 'cuberta_entry_meta' ) ) :
             $time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date()
             );
 
-            printf( '<div class="posted-on"><label>%1$s: </label><span class="icon"><a href="%2$s">%3$s</a></span></div> ', _x( 'Posted on', 'Used before publish date.', 'cuberta' ), esc_url( get_permalink() ), $time_string
+            printf( '<div class="posted-on"><label>%1$s: </label><span class="icon"><a href="%2$s">%3$s</a></span></div> ', esc_html( _x( 'Posted on', 'Used before publish date.', 'cuberta' ) ), esc_url( get_permalink() ), wp_kses( $time_string, 'post' )
             );
         }
 
         if ( 'post' == get_post_type() ) {
             if ( is_singular() || is_multi_author() ) {
-                printf( '<div class="author"><label>%1$s: </label><span class="icon"> <a href="%2$s">%3$s</a></span></div> ', _x( 'Author', 'Used before post author name.', 'cuberta' ), esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() 
+                printf( '<div class="author"><label>%1$s: </label><span class="icon"> <a href="%2$s">%3$s</a></span></div> ', esc_html( _x( 'Author', 'Used before post author name.', 'cuberta' ) ), esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() 
                 );
             }
 
             $categories_list = get_the_category_list( ', ' );
             if ( $categories_list && cuberta_categorized_blog() ) {
-                printf( '<div class="cat-links"><label>%1$s: </label><span class="icon">%2$s</span></div> ', _x( 'Categories', 'Used before category names.', 'cuberta' ), $categories_list 
+                printf( '<div class="cat-links"><label>%1$s: </label><span class="icon">%2$s</span></div> ', esc_html( _x( 'Categories', 'Used before category names.', 'cuberta' ) ), wp_kses( $categories_list, 'post' )
                 );
             }
 
             $tags_list = get_the_tag_list( '', ', ' );
             if ( $tags_list ) {
-                printf( '<div class="tags-links"><label>%1$s: </label><span class="icon">%2$s</span></div>', _x( 'Tags', 'Used before tag names.', 'cuberta' ), $tags_list
+                printf( '<div class="tags-links"><label>%1$s: </label><span class="icon">%2$s</span></div>', esc_html( _x( 'Tags', 'Used before tag names.', 'cuberta' ) ), wp_kses( $tags_list, 'post' )
                 );
             }
         }
@@ -818,7 +835,7 @@ if ( !function_exists( 'cuberta_entry_meta_less' ) ) :
 
     function cuberta_entry_meta_less() {
         if ( is_sticky() && is_home() && !is_paged() ) {
-            printf( '<div class="featured">%s</div> ', __( 'Featured', 'cuberta' ) );
+            printf( '<div class="featured">%s</div> ', esc_html__( 'Featured', 'cuberta' ) );
             $separator = "";
         } else {
             $separator = "";
@@ -831,7 +848,7 @@ if ( !function_exists( 'cuberta_entry_meta_less' ) ) :
             $time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date()
             );
 
-            printf( '<div class="posted-on"><label>%1$s: </label><span class="icon"><a href="%2$s">%3$s</a></span></div> ', _x( 'Posted on', 'Used before publish date.', 'cuberta' ), esc_url( get_permalink() ), $time_string
+            printf( '<div class="posted-on"><label>%1$s: </label><span class="icon"><a href="%2$s">%3$s</a></span></div> ', esc_html( _x( 'Posted on', 'Used before publish date.', 'cuberta' ) ), esc_url( get_permalink() ), wp_kses( $time_string, 'post' )
             );
             $separator = "";
         } else {
@@ -842,7 +859,7 @@ if ( !function_exists( 'cuberta_entry_meta_less' ) ) :
 
             $categories_list = get_the_category_list( ', ' );
             if ( $categories_list && cuberta_categorized_blog() ) {
-                printf( '<div class="cat-links"><label>%1$s: </label><span class="icon">%2$s</span></div> ', _x( 'Categories', 'Used before category names.', 'cuberta' ), $categories_list 
+                printf( '<div class="cat-links"><label>%1$s: </label><span class="icon">%2$s</span></div> ', esc_html( _x( 'Categories', 'Used before category names.', 'cuberta' ) ), wp_kses( $categories_list, 'post' )
                 );
             }
         }
