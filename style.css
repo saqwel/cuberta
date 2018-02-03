@@ -1,10 +1,10 @@
 /*
 Theme Name: Cuberta
-Theme URI: http://cuberta.saqwel.ru/
+Theme URI: http://www.saqwel.ru/cuberta
 Author: Saqwel
 Author URI: http://www.saqwel.ru/
 Description: Cuberta is a unique WordPress theme. It is adapted for wide and narrow screens. Cuberta has many options for customization site colors, fonts and front page layouts.
-Version: 2.2
+Version: 2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, threaded-comments, translation-ready, theme-options
@@ -12,7 +12,7 @@ Text Domain: cuberta
 
 This theme, like WordPress, is licensed under the GPL.
 All fonts are free.
-Main image downloaded from https://www.flickr.com
+Main image downloaded from https://pxhere.com/en/photo/1015788
 */
 
 html {
@@ -193,7 +193,6 @@ input:not( [type="submit"] ) {
 .cuberta-menu li,
 .cuberta-menu li a,
 .main-menu ul li a {
-    color: #000;
     cursor: pointer;
     font-size: 1.25rem;
     text-decoration: none;
@@ -1043,7 +1042,6 @@ span.icon::before {
 }
 
 .footer-item {
-    background: #999;
     border: none;
     box-sizing: border-box;
     clear: both;

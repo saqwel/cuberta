@@ -1,5 +1,6 @@
 <?php
 
+// This is required, but do not used
 if ( ! isset( $content_width ) ) {
     $content_width = 900;
 }
@@ -49,22 +50,6 @@ if ( !function_exists( 'cuberta_theme_setup' ) ) :
 
 endif; // cuberta_theme_setup
 add_action( 'after_setup_theme', 'cuberta_theme_setup' );
-/*
-// Add google fonts
-function cuberta_add_google_fonts() {
-    wp_enqueue_style( 'cuberta-google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+SC|Amatic+SC|Anonymous+Pro|Bad+Script|Comfortaa|Cormorant+Garamond|Cormorant+Infant|Exo+2|Gabriela|Jura|Kelly+Slab|Kurale|Lobster|Lora|Montserrat+Alternates|Neucha|PT+Mono|Pangolin|Pattaya|Playfair+Display+SC|Poiret+One|Roboto|Ruslan+Display|Russo+One|Seymour+One|Stalinist+One|Ubuntu|Underdog|Vollkorn|Yanone+Kaffeesatz&amp;subset=cyrillic', false ); 
-}
-
-add_action( 'wp_enqueue_scripts', 'cuberta_add_google_fonts' );
-
-// Add fontawesome font
-function cuberta_add_fontawesome_fonts() {
-    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
-    //wp_enqueue_style( 'cuberta-fontawesome-fonts', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', false ); 
-}
-
-add_action( 'wp_enqueue_scripts', 'cuberta_add_fontawesome_fonts' );
-*/
 
 /**
  * Registers an editor stylesheet for the theme.
@@ -166,7 +151,7 @@ function cuberta_sanitize_integer( $value ) {
     }
 }
 
-// Sane default settings
+// Set default settings
 $cuberta_defaults = array(
     'cuberta_site_identity'             => true,
     'cuberta_all_headers_color'         => '#c00',
@@ -600,6 +585,7 @@ function cuberta_customize_register( $wp_customize ) {
 
 add_action( 'customize_register', 'cuberta_customize_register' );
 
+// Styles from admin panel
 function cuberta_customize_css() {
     global $cuberta_defaults;
     ?>
@@ -613,7 +599,7 @@ function cuberta_customize_css() {
             <?php
             $font_family = get_theme_mod( 'cuberta_site_header_font', $cuberta_defaults['cuberta_site_header_font'] );
             if ( '' !== $font_family ) {
-                echo esc_html( "font-family: '$font_family';" );
+                echo 'font-family: "' . esc_html( $font_family ) . '";';
             }
             ?>
             color: <?php echo esc_html( get_theme_mod( 'cuberta_site_header_color', $cuberta_defaults['cuberta_site_header_color'] ) ); ?>;
@@ -638,7 +624,7 @@ function cuberta_customize_css() {
             <?php
             $font_family = get_theme_mod( 'cuberta_all_headers_font', $cuberta_defaults['cuberta_all_headers_font'] );
             if ( '' !== $font_family ) {
-                echo esc_html( "font-family: '$font_family';" );
+                echo 'font-family: "' . esc_html( $font_family ) . '";';
             }
             ?>
             color: <?php echo esc_html( get_theme_mod( 'cuberta_all_headers_color', $cuberta_defaults['cuberta_all_headers_color'] ) ); ?>;
@@ -683,11 +669,11 @@ function cuberta_customize_css() {
         }
 
         .cuberta-menu {
-            background: <?php echo esc_html( get_theme_mod( 'cuberta_menu_background', $cuberta_defaults['cuberta_menu_background'] ) ); ?>;
+            background-color: <?php echo esc_html( get_theme_mod( 'cuberta_menu_background', $cuberta_defaults['cuberta_menu_background'] ) ); ?>;
         }
 
         .footer-item {
-            background: <?php echo esc_html( get_theme_mod( 'cuberta_footer_background', $cuberta_defaults['cuberta_footer_background'] ) ); ?> ;
+            background-color: <?php echo esc_html( get_theme_mod( 'cuberta_footer_background', $cuberta_defaults['cuberta_footer_background'] ) ); ?> ;
         }
         
         #header-image {
@@ -891,7 +877,6 @@ function cuberta_categorized_blog() {
 
 // Change categories count design
 function cuberta_add_span_cat_count( $links ) {
-//$links = str_replace('</a> (', '</a> <span>(', $links);
     $links = str_replace( '</a> (', ' (', $links );
     $links = str_replace( ')', ')</a>', $links );
     return $links;
@@ -899,8 +884,7 @@ function cuberta_add_span_cat_count( $links ) {
 
 add_filter( 'wp_list_categories', 'cuberta_add_span_cat_count' );
 
-
-// Make custom excerpts for pages on front page
+// Make custom excerpts for three boxes on front page
 function cuberta_make_excerpt( $text, $excerpt_length ) {
     $excerpt_string = '';
     $array = str_word_count( strip_tags( $text ), 1 );

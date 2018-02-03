@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width">
         <?php 
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) == 1 ) {
-        //if ( is_singular() ) { 
             wp_enqueue_script( 'comment-reply' ); 
         }
         wp_head();
@@ -32,6 +31,11 @@
                 'depth'           => 0,
                 'walker'          => '' 
             );
+            if ( !empty( wp_nav_menu( $cuberta_menu_parameters ) ) ) {
+                $cuberta_menu = true;
+            } else {
+                $cuberta_menu = false;
+            }
             if ( get_theme_mod( 'cuberta_menu_home_button', $cuberta_defaults['cuberta_menu_home_button'] ) ) {
                 $cuberta_home = true;
             } else {
@@ -89,7 +93,7 @@
             // Set post thumbnail if it is set
             if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
                 $cuberta_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' );
-                $cuberta_header_style = "background: url(" . esc_url( $cuberta_url ) . ");";
+                $cuberta_header_style = "background-image: url(" . esc_url( $cuberta_url ) . ");";
             } else {
                 $cuberta_header_style = '';
             }

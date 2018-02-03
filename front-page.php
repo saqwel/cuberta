@@ -114,7 +114,6 @@ global $cuberta_defaults;
             <div id="front-latest">
                 <?php
                 if ( have_posts() ) :
-                    //query_posts();
                     // Start the loop.
                     while ( have_posts() ) : the_post();
 
