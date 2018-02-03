@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Cuberta\n"
-"POT-Creation-Date: 2018-01-31 07:01+0500\n"
-"PO-Revision-Date: 2018-01-31 07:01+0500\n"
+"POT-Creation-Date: 2018-02-03 05:51+0500\n"
+"PO-Revision-Date: 2018-02-03 05:51+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,27 +21,28 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:26
+#. translators: This is the title of comment section
+#: comments.php:28
 #, php-format
 msgctxt "Comments title"
-msgid "One comment"
+msgid "%1$s comment"
 msgid_plural "%1$s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:42
+#: comments.php:46
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:55
+#: comments.php:59
 msgid "Name"
 msgstr ""
 
-#: comments.php:61
+#: comments.php:65
 msgid "Email"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:71
 msgid "Website"
 msgstr ""
 
@@ -49,46 +50,38 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:22
+#. translators: Link to post-new.php
+#: content-none.php:25
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:26
+#: content-none.php:31
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:31
+#: content-none.php:36
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: content-page.php:32 content.php:60
+#: content-page.php:24 content.php:63
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:42 content.php:81
+#: content-page.php:34 content.php:84
 msgid "Edit"
 msgstr ""
 
-#: footer.php:71
-msgid "Contacts"
-msgstr ""
-
-#: footer.php:116
-msgctxt "Footer"
-msgid "Social"
-msgstr ""
-
-#: front-page.php:40
+#: front-page.php:39
 msgid "Welcome text"
 msgstr ""
 
-#: front-page.php:43
+#: front-page.php:42
 msgid ""
 "Cuberta is WordPress theme. Theme which fully uses entire width of the page, "
 "depending on the size of the screen. Site administrator can customize color "
@@ -100,52 +93,49 @@ msgstr ""
 msgid "Color scheme"
 msgstr ""
 
-#: front-page.php:60 functions.php:404
+#: front-page.php:60 functions.php:414
 msgid "Headers fonts"
 msgstr ""
 
-#: front-page.php:61 functions.php:498
+#: front-page.php:61 functions.php:446
 msgid "Front page"
 msgstr ""
 
-#: front-page.php:63
+#: front-page.php:64
 msgid "Administrator can customize most of site elements colors."
 msgstr ""
 
-#: front-page.php:64
+#: front-page.php:65
 msgid "Site administrator can select one of 30 fonts for displaying headers."
 msgstr ""
 
-#: front-page.php:65
+#: front-page.php:66
 msgid "Any front page layout may be hidden and replaced by widget."
 msgstr ""
 
-#: front-page.php:113
-msgid "Latest posts"
-msgstr ""
-
-#: functions.php:20
+#: functions.php:33
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:30
+#: functions.php:46
 msgid "Default Header Image"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:64
 msgid "Footer Widget Area"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:66
 msgid "This widget area is placed in the footer."
 msgstr ""
 
-#: functions.php:75 functions.php:84 functions.php:93 functions.php:102
+#. translators: %s is a serial number of a widget area
+#: functions.php:74 functions.php:84 functions.php:94 functions.php:104
 #, php-format
 msgid "Front Page Widget Area %s"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:76
 msgid "This widget area is the highest front page widget area."
 msgstr ""
 
@@ -153,352 +143,233 @@ msgstr ""
 msgid "This widget is between Welcome text and Three boxes area."
 msgstr ""
 
-#: functions.php:95
+#: functions.php:96
 msgid "This widget area is between Three boxes area and Latest posts area."
 msgstr ""
 
-#: functions.php:104
+#: functions.php:106
 msgid "This widget area is a last widget area of the front page."
 msgstr ""
 
-#: functions.php:222
+#: functions.php:200
 msgid "Display site identity"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:217
 msgid "All Headers Color"
 msgstr ""
 
-#: functions.php:240
+#: functions.php:218
 msgid "This color applies for all headers"
 msgstr ""
 
-#: functions.php:254
+#: functions.php:232
 msgid "All Links Color"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:233
 msgid "This color applies for all links"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:248
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions.php:271
+#: functions.php:249
 msgid "This color applies for footer background"
 msgstr ""
 
-#: functions.php:285
+#: functions.php:263
 msgid "Footer Font Color"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:264
 msgid "This color applies for footer text and links"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:278
 msgid "Footer Headers Color"
 msgstr ""
 
-#: functions.php:301
+#: functions.php:279
 msgid "This color applies for footer headers"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:293
 msgid "Menu Background Color"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:294
 msgid "This color applies for menu background"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:308
 msgid "Menu Links Color"
 msgstr ""
 
-#: functions.php:331
+#: functions.php:309
 msgid "This color applies for menu links and sidebar links"
 msgstr ""
 
-#: functions.php:345
+#: functions.php:323
 msgid "Meta Links Color"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:324
 msgid "This color applies for links under article header (meta data)"
 msgstr ""
 
-#: functions.php:360
+#: functions.php:338
 msgid "Meta Text Color"
 msgstr ""
 
-#: functions.php:361
+#: functions.php:339
 msgid "This color applies for text under article header (meta data)"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:353
 msgid "Site Header Color"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:354
 msgid "This color applies for main site title"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:368
 msgid "Site Description Color"
 msgstr ""
 
-#: functions.php:391
+#: functions.php:369
 msgid "This color applies for site description"
 msgstr ""
 
-#: functions.php:410
+#: functions.php:420
 msgid "Choose font for site header"
 msgstr ""
 
-#: functions.php:456
+#: functions.php:435
 msgid "Choose font for all headers"
 msgstr ""
 
-#: functions.php:509
+#: functions.php:457
 msgid "Display Welcome Text"
 msgstr ""
 
-#: functions.php:522
+#: functions.php:470
 msgid "Front page welcome text"
 msgstr ""
 
-#: functions.php:536
+#: functions.php:484
 msgid "Display Three boxes"
 msgstr ""
 
-#: functions.php:551
+#. translators: %d is a serial number of front page box
+#: functions.php:500
 #, php-format
 msgid "Front page box %d"
 msgstr ""
 
-#: functions.php:566
+#: functions.php:515
 msgid "Display Latest Posts"
 msgstr ""
 
-#: functions.php:576
-msgid "Footer contacts"
-msgstr ""
-
-#: functions.php:587
-msgid "Country, city"
-msgstr ""
-
-#: functions.php:601
-msgid "Address"
-msgstr ""
-
-#: functions.php:615 functions.php:629
-msgid "Phone"
-msgstr ""
-
-#: functions.php:643 functions.php:657
-msgid "E-mail"
-msgstr ""
-
-#: functions.php:671
-msgid "Skype"
-msgstr ""
-
-#: functions.php:685
-msgid "Fax"
-msgstr ""
-
-#: functions.php:694
-msgid "Footer social"
-msgstr ""
-
-#: functions.php:705
-msgid "Facebook"
-msgstr ""
-
-#: functions.php:706
-msgid "Set full link of your facebook profile"
-msgstr ""
-
-#: functions.php:720
-msgid "Github"
-msgstr ""
-
-#: functions.php:721
-msgid "Set full link of your github profile"
-msgstr ""
-
-#: functions.php:735
-msgid "Gitlab"
-msgstr ""
-
-#: functions.php:736
-msgid "Set full link of your gitlab profile"
-msgstr ""
-
-#: functions.php:750
-msgid "Google plus"
-msgstr ""
-
-#: functions.php:751
-msgid "Set full link of your google plus profile"
-msgstr ""
-
-#: functions.php:765
-msgid "Instagram"
-msgstr ""
-
-#: functions.php:766
-msgid "Set full link of your instagram profile"
-msgstr ""
-
-#: functions.php:780
-msgid "LinkedIn"
-msgstr ""
-
-#: functions.php:781
-msgid "Set full link of your linkedin profile"
-msgstr ""
-
-#: functions.php:795
-msgid "Pinterest"
-msgstr ""
-
-#: functions.php:796
-msgid "Set full link of your pinterest profile"
-msgstr ""
-
-#: functions.php:810
-msgid "Twitter"
-msgstr ""
-
-#: functions.php:811
-msgid "Set full link of your twitter profile"
-msgstr ""
-
-#: functions.php:825
-msgid "Vimeo"
-msgstr ""
-
-#: functions.php:826
-msgid "Set full link of your vimeo profile"
-msgstr ""
-
-#: functions.php:840
-msgid "VK"
-msgstr ""
-
-#: functions.php:841
-msgid "Set full link of your vk profile"
-msgstr ""
-
-#: functions.php:855
-msgid "YouTube"
-msgstr ""
-
-#: functions.php:856
-msgid "Set full link of your youtube profile"
-msgstr ""
-
-#: functions.php:862
+#: functions.php:523
 msgid "You can set four buttons in the header of Cuberta theme."
 msgstr ""
 
-#: functions.php:863
+#: functions.php:524
 msgid ""
 "You have to assign some menu to Primary menu area to display Main menu "
 "button in the header. You can set other buttons visibility with checkboxes "
 "below."
 msgstr ""
 
-#: functions.php:864 header.php:73
+#: functions.php:525 header.php:58
 msgid "Home"
 msgstr ""
 
-#: functions.php:865
+#: functions.php:526
 msgid "Main menu"
 msgstr ""
 
-#: functions.php:866 header.php:79
+#: functions.php:527 header.php:64
 msgid "Search"
 msgstr ""
 
-#: functions.php:867 header.php:90
+#: functions.php:528 header.php:75
 msgid "Login"
 msgstr ""
 
-#: functions.php:871
+#: functions.php:532
 msgid "Header settings"
 msgstr ""
 
-#: functions.php:883
+#: functions.php:544
 msgid "Display Home Button"
 msgstr ""
 
-#: functions.php:884
+#: functions.php:545
 msgid "This is home icon in the header of theme"
 msgstr ""
 
-#: functions.php:899
+#: functions.php:560
 msgid "Display Search Button"
 msgstr ""
 
-#: functions.php:900
+#: functions.php:561
 msgid "This is search icon in the header of theme"
 msgstr ""
 
-#: functions.php:915
+#: functions.php:576
 msgid "Display Login Button"
 msgstr ""
 
-#: functions.php:916
+#: functions.php:577
 msgid "This is login icon in the header of theme"
 msgstr ""
 
-#: functions.php:1048
+#: functions.php:721
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:1086
+#: functions.php:763
 msgid "Read"
 msgstr ""
 
-#: functions.php:1099 functions.php:1147
+#: functions.php:776 functions.php:824
 msgid "Featured"
 msgstr ""
 
-#: functions.php:1104
+#: functions.php:781
 msgctxt "Used before post format."
 msgid "Format"
 msgstr ""
 
-#: functions.php:1115 functions.php:1160
+#: functions.php:792 functions.php:837
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: functions.php:1121
+#: functions.php:798
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr ""
 
-#: functions.php:1127 functions.php:1171
+#: functions.php:804 functions.php:848
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""
 
-#: functions.php:1133
+#: functions.php:810
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr ""
 
-#: header.php:76
+#: header.php:61
 msgid "Menu"
 msgstr ""
 
-#: header.php:86
+#: header.php:71
 msgid "Logout"
 msgstr ""
 
@@ -507,7 +378,7 @@ msgid "Cuberta"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://cuberta.saqwel.ru/"
+msgid "http://www.saqwel.ru/cuberta"
 msgstr ""
 
 #. Description of the plugin/theme

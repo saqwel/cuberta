@@ -3,8 +3,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Project-Id-Version: Cuberta\n"
-"POT-Creation-Date: 2018-01-30 07:14+0500\n"
-"PO-Revision-Date: 2018-01-30 07:35+0500\n"
+"POT-Creation-Date: 2018-02-03 05:53+0500\n"
+"PO-Revision-Date: 2018-02-03 06:03+0500\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,42 +22,44 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:26
+#. translators: This is the title of comment section
+#: comments.php:28
 #, php-format
 msgctxt "Comments title"
-msgid "One comment"
+msgid "%1$s comment"
 msgid_plural "%1$s comments"
 msgstr[0] "%1$s комментарий"
 msgstr[1] "%1$s комментария"
 msgstr[2] "%1$s комментариев"
 
-#: comments.php:42
+#: comments.php:46
 msgid "Comments are closed."
 msgstr "Комментарии запрещены."
 
-#: comments.php:55
+#: comments.php:59
 msgid "Name"
 msgstr "Имя"
 
-#: comments.php:61
+#: comments.php:65
 msgid "Email"
 msgstr "Электронная почта"
 
-#: comments.php:67
+#: comments.php:71
 msgid "Website"
 msgstr "Сайт"
 
 #: content-none.php:15
 msgid "Nothing Found"
-msgstr "Ничего не найдено"
+msgstr "Сайт"
 
-#: content-none.php:22
+#. translators: Link to post-new.php
+#: content-none.php:25
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Готовы опубликовать первую запись? <a href=\"%1$s\">Вам сюда</a>."
 
-#: content-none.php:26
+#: content-none.php:31
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -65,34 +67,25 @@ msgstr ""
 "Извините, но не удалось найти ничего соответствующего вашему запросу. "
 "Пожалуйста, попробуйте снова с другими ключевыми словами."
 
-#: content-none.php:31
+#: content-none.php:36
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr "Похоже, мы не можем найти, то что вы ищите."
 
-#: content-page.php:32 content.php:60
+#: content-page.php:24 content.php:63
 msgid "Pages:"
 msgstr "Страницы:"
 
-#: content-page.php:42 content.php:81
+#: content-page.php:34 content.php:84
 msgid "Edit"
 msgstr "Редактировать"
 
-#: footer.php:71
-msgid "Contacts"
-msgstr "Контакты"
-
-#: footer.php:116
-msgctxt "Footer"
-msgid "Social"
-msgstr "Ссылки"
-
-#: front-page.php:40
+#: front-page.php:39
 msgid "Welcome text"
 msgstr "Приветственный текст"
 
-#: front-page.php:43
+#: front-page.php:42
 msgid ""
 "Cuberta is WordPress theme. Theme which fully uses entire width of the page, "
 "depending on the size of the screen. Site administrator can customize color "
@@ -108,329 +101,196 @@ msgstr ""
 msgid "Color scheme"
 msgstr "Цветовая схема"
 
-#: front-page.php:60 functions.php:408
+#: front-page.php:60 functions.php:414
 msgid "Headers fonts"
 msgstr "Шрифт заголовков"
 
-#: front-page.php:61 functions.php:502
+#: front-page.php:61 functions.php:446
 msgid "Front page"
 msgstr "Главная страница"
 
-#: front-page.php:63
+#: front-page.php:64
 msgid "Administrator can customize most of site elements colors."
 msgstr "Администратор может настроить цвет большинства элементов сайта."
 
-#: front-page.php:64
+#: front-page.php:65
 msgid "Site administrator can select one of 30 fonts for displaying headers."
 msgstr ""
 "Администратор сайта может выбрать один из 30 шрифтов для отображения "
 "залоговков."
 
-#: front-page.php:65
+#: front-page.php:66
 msgid "Any front page layout may be hidden and replaced by widget."
 msgstr "Любый элемент главной страницы может быть скрыт и заменен виджетом."
 
-#: front-page.php:113
-msgid "Latest posts"
-msgstr "Последние записи"
-
-#: functions.php:16
+#: functions.php:33
 msgid "Primary Menu"
 msgstr "Главное меню"
 
-#: functions.php:50
+#: functions.php:46
+msgid "Default Header Image"
+msgstr "Изображение заголовка по-умолчанию"
+
+#: functions.php:64
 msgid "Footer Widget Area"
 msgstr "Виджет нижнего колонтиттула"
 
-#: functions.php:52
+#: functions.php:66
 msgid "This widget area is placed in the footer."
 msgstr "Эта область виджетов размещается в нижнем колонтитуле."
 
-#: functions.php:59 functions.php:68 functions.php:77 functions.php:86
+#. translators: %s is a serial number of a widget area
+#: functions.php:74 functions.php:84 functions.php:94 functions.php:104
 #, php-format
 msgid "Front Page Widget Area %s"
 msgstr "Область виджетов главной страницы %s"
 
-#: functions.php:61
+#: functions.php:76
 msgid "This widget area is the highest front page widget area."
 msgstr "Эта область виджетов предваряет контент главной страницы."
 
-#: functions.php:70
+#: functions.php:86
 msgid "This widget is between Welcome text and Three boxes area."
 msgstr "Эта область виджетов находится под текстом приветствия."
 
-#: functions.php:79
+#: functions.php:96
 msgid "This widget area is between Three boxes area and Latest posts area."
 msgstr ""
 "Эта область виджетов находится над областью с последними записями главной "
 "страницы."
 
-#: functions.php:88
+#: functions.php:106
 msgid "This widget area is a last widget area of the front page."
 msgstr "Эта область виджетов находится в самом низу главной страницы."
 
-#: functions.php:207
+#: functions.php:200
 msgid "Display site identity"
 msgstr "Отображать название и описание сайта"
 
-#: functions.php:221
-msgid "Main image"
-msgstr "Главное изображение"
-
-#: functions.php:227
-msgid "Upload image"
-msgstr "Загрузить изображение"
-
-#: functions.php:228
-msgid ""
-"Theme will show this image on all pages where thumbnail image does not set"
-msgstr ""
-"Это изображение будет отображаться на всех страницах, где не установлено "
-"изображение"
-
-#: functions.php:243
+#: functions.php:217
 msgid "All Headers Color"
 msgstr "Цвет всех заголовков"
 
-#: functions.php:244
+#: functions.php:218
 msgid "This color applies for all headers"
 msgstr "Этот цвет применяется для всех заголовков сайта"
 
-#: functions.php:258
+#: functions.php:232
 msgid "All Links Color"
 msgstr "Цвет всех ссылок"
 
-#: functions.php:259
+#: functions.php:233
 msgid "This color applies for all links"
 msgstr "Этот цвет применяется для всех ссылок на страницах сайта"
 
-#: functions.php:274
+#: functions.php:248
 msgid "Footer Background Color"
 msgstr "Цвет фона нижнего колонтитула"
 
-#: functions.php:275
+#: functions.php:249
 msgid "This color applies for footer background"
 msgstr "Этот цвет применяется к фону нижнего колонтитула"
 
-#: functions.php:289
+#: functions.php:263
 msgid "Footer Font Color"
 msgstr "Цвет шрифта нижнего колонтиитула"
 
-#: functions.php:290
+#: functions.php:264
 msgid "This color applies for footer text and links"
 msgstr "Этот цвет применяется для всех ссылок и текстов нижнего колонтитула"
 
-#: functions.php:304
+#: functions.php:278
 msgid "Footer Headers Color"
 msgstr "Цвет заголовков нижнего колонтитула"
 
-#: functions.php:305
+#: functions.php:279
 msgid "This color applies for footer headers"
-msgstr "Этот цвет применяется для заголовков нижнего колотитула"
+msgstr "Этот цвет применяется для заголовков нижнего колонтитула"
 
-#: functions.php:319
+#: functions.php:293
 msgid "Menu Background Color"
 msgstr "Цвет фона главного меню"
 
-#: functions.php:320
+#: functions.php:294
 msgid "This color applies for menu background"
 msgstr "Этот цвет применяется для фона главного меню"
 
-#: functions.php:334
+#: functions.php:308
 msgid "Menu Links Color"
 msgstr "Цвет ссылок главного меню"
 
-#: functions.php:335
+#: functions.php:309
 msgid "This color applies for menu links and sidebar links"
 msgstr ""
 "Этот цвет применяется для ссылок в главном меню и ссылок боковых панелей"
 
-#: functions.php:349
+#: functions.php:323
 msgid "Meta Links Color"
 msgstr "Цвет ссылок метаданных"
 
-#: functions.php:350
+#: functions.php:324
 msgid "This color applies for links under article header (meta data)"
 msgstr "Этот цвет применяется для ссылок с методанными записей и страниц"
 
-#: functions.php:364
+#: functions.php:338
 msgid "Meta Text Color"
 msgstr "Цвет текста метаданных"
 
-#: functions.php:365
+#: functions.php:339
 msgid "This color applies for text under article header (meta data)"
 msgstr "Этот цвет применяется к тексту метаданных"
 
-#: functions.php:379
+#: functions.php:353
 msgid "Site Header Color"
 msgstr "Цвет заголовка сайта"
 
-#: functions.php:380
+#: functions.php:354
 msgid "This color applies for main site title"
 msgstr "Этот цвет применяется к главному заголовку сайта"
 
-#: functions.php:394
+#: functions.php:368
 msgid "Site Description Color"
 msgstr "Цвет описания сайта"
 
-#: functions.php:395
+#: functions.php:369
 msgid "This color applies for site description"
 msgstr "Этот цвет применяется к описанию сайта"
 
-#: functions.php:414
+#: functions.php:420
 msgid "Choose font for site header"
 msgstr "Выбрать шрифт для заголовка сайта"
 
-#: functions.php:460
+#: functions.php:435
 msgid "Choose font for all headers"
 msgstr "Выбрать щрифт для всех заголовков сайта"
 
-#: functions.php:513
+#: functions.php:457
 msgid "Display Welcome Text"
 msgstr "Отображать текст приветствия"
 
-#: functions.php:526
+#: functions.php:470
 msgid "Front page welcome text"
 msgstr "Приветственный текст главной страницы"
 
-#: functions.php:540
+#: functions.php:484
 msgid "Display Three boxes"
 msgstr "Отображать три колонки"
 
-#: functions.php:555
+#. translators: %d is a serial number of front page box
+#: functions.php:500
 #, php-format
 msgid "Front page box %d"
 msgstr "Колонка главной страницы %d"
 
-#: functions.php:570
+#: functions.php:515
 msgid "Display Latest Posts"
 msgstr "Отображать последние записи"
 
-#: functions.php:580
-msgid "Footer contacts"
-msgstr "Контакты в нижнем колонтитуле"
-
-#: functions.php:591
-msgid "Country, city"
-msgstr "Страна, город"
-
-#: functions.php:605
-msgid "Address"
-msgstr "Адрес"
-
-#: functions.php:619 functions.php:633
-msgid "Phone"
-msgstr "Телефон"
-
-#: functions.php:647 functions.php:661
-msgid "E-mail"
-msgstr "Электронная почта"
-
-#: functions.php:675
-msgid "Skype"
-msgstr ""
-
-#: functions.php:689
-msgid "Fax"
-msgstr "Факс"
-
-#: functions.php:698
-msgid "Footer social"
-msgstr "Ссылки соцсетей"
-
-#: functions.php:709
-msgid "Facebook"
-msgstr ""
-
-#: functions.php:710
-msgid "Set full link of your facebook profile"
-msgstr "Укажите полную ссылку к вашему профилю facebook"
-
-#: functions.php:724
-msgid "Github"
-msgstr ""
-
-#: functions.php:725
-msgid "Set full link of your github profile"
-msgstr "Укажите полную ссылку к вашему профилю github"
-
-#: functions.php:739
-msgid "Gitlab"
-msgstr ""
-
-#: functions.php:740
-msgid "Set full link of your gitlab profile"
-msgstr "Укажите полную ссылку к вашему профилю gitlab"
-
-#: functions.php:754
-msgid "Google plus"
-msgstr ""
-
-#: functions.php:755
-msgid "Set full link of your google plus profile"
-msgstr "Укажите полную ссылку к вашему профилю google plus"
-
-#: functions.php:769
-msgid "Instagram"
-msgstr ""
-
-#: functions.php:770
-msgid "Set full link of your instagram profile"
-msgstr "Укажите полную ссылку к вашему профилю instagram"
-
-#: functions.php:784
-msgid "LinkedIn"
-msgstr ""
-
-#: functions.php:785
-msgid "Set full link of your linkedin profile"
-msgstr "ую ссылку к вашему профилю linkedin"
-
-#: functions.php:799
-msgid "Pinterest"
-msgstr ""
-
-#: functions.php:800
-msgid "Set full link of your pinterest profile"
-msgstr "Укажите полную ссылку к вашему профилю pinterest"
-
-#: functions.php:814
-msgid "Twitter"
-msgstr ""
-
-#: functions.php:815
-msgid "Set full link of your twitter profile"
-msgstr "Укажите полную ссылку к вашему профилю twitter"
-
-#: functions.php:829
-msgid "Vimeo"
-msgstr ""
-
-#: functions.php:830
-msgid "Set full link of your vimeo profile"
-msgstr "Укажите полную ссылку к вашему профилю vimeo"
-
-#: functions.php:844
-msgid "VK"
-msgstr ""
-
-#: functions.php:845
-msgid "Set full link of your vk profile"
-msgstr "Укажите полную ссылку к вашему профилю vk"
-
-#: functions.php:859
-msgid "YouTube"
-msgstr ""
-
-#: functions.php:860
-msgid "Set full link of your youtube profile"
-msgstr "Укажите полную ссылку к вашему профилю yotube"
-
-#: functions.php:866
+#: functions.php:523
 msgid "You can set four buttons in the header of Cuberta theme."
 msgstr "Вы можете настроить четыре кнопки в заголовке темы Cuberta."
 
-#: functions.php:867
+#: functions.php:524
 msgid ""
 "You have to assign some menu to Primary menu area to display Main menu "
 "button in the header. You can set other buttons visibility with checkboxes "
@@ -440,92 +300,92 @@ msgstr ""
 "верхнем колонтитуле сайта отобразилась кнопка Главного меню.  Настроить "
 "видимость остальных кнопок можно галками ниже."
 
-#: functions.php:868 header.php:73
+#: functions.php:525 header.php:58
 msgid "Home"
 msgstr "Главная"
 
-#: functions.php:869
+#: functions.php:526
 msgid "Main menu"
 msgstr "Главное меню"
 
-#: functions.php:870 header.php:79
+#: functions.php:527 header.php:64
 msgid "Search"
 msgstr "Поиск"
 
-#: functions.php:871 header.php:90
+#: functions.php:528 header.php:75
 msgid "Login"
 msgstr "Логин"
 
-#: functions.php:875
+#: functions.php:532
 msgid "Header settings"
 msgstr "Настройка шапки"
 
-#: functions.php:887
+#: functions.php:544
 msgid "Display Home Button"
 msgstr "Отображать кнопку Главная"
 
-#: functions.php:888
+#: functions.php:545
 msgid "This is home icon in the header of theme"
 msgstr "Это иконка домика в верхнем колонтитуле темы"
 
-#: functions.php:903
+#: functions.php:560
 msgid "Display Search Button"
 msgstr "Отображать кнопку Поиск"
 
-#: functions.php:904
+#: functions.php:561
 msgid "This is search icon in the header of theme"
 msgstr "Это иконка лупы в верхнем колонтитуле темы"
 
-#: functions.php:919
+#: functions.php:576
 msgid "Display Login Button"
 msgstr "Отображать кнопку Логин"
 
-#: functions.php:920
+#: functions.php:577
 msgid "This is login icon in the header of theme"
 msgstr "Это иконка двери в верхнем колонтитуле"
 
-#: functions.php:1052
+#: functions.php:721
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации."
 
-#: functions.php:1090
+#: functions.php:763
 msgid "Read"
 msgstr "Читать"
 
-#: functions.php:1103 functions.php:1151
+#: functions.php:776 functions.php:824
 msgid "Featured"
 msgstr "Рекомендуемое"
 
-#: functions.php:1108
+#: functions.php:781
 msgctxt "Used before post format."
 msgid "Format"
 msgstr "Формат"
 
-#: functions.php:1119 functions.php:1164
+#: functions.php:792 functions.php:837
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr "Опубликовано"
 
-#: functions.php:1125
+#: functions.php:798
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr "Автор"
 
-#: functions.php:1131 functions.php:1175
+#: functions.php:804 functions.php:848
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Категории"
 
-#: functions.php:1137
+#: functions.php:810
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Теги"
 
-#: header.php:76
+#: header.php:61
 msgid "Menu"
 msgstr "Меню"
 
-#: header.php:86
+#: header.php:71
 msgid "Logout"
 msgstr "Выйти"
 
@@ -534,7 +394,7 @@ msgid "Cuberta"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://cuberta.saqwel.ru/"
+msgid "http://www.saqwel.ru/cuberta"
 msgstr ""
 
 #. Description of the plugin/theme
