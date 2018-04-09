@@ -171,7 +171,7 @@ License: Open Font License
 Source: https://fonts.google.com/specimen/Yanone+Kaffeesatz
 
 == Changelog ==
-= 2.4 =
+= 2.3.1 =
 * Released: April 09, 2018
 
 Minor title attribute fix in content.php
