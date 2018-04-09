@@ -47,7 +47,7 @@
         <?php if ( !is_single() && has_post_thumbnail() ) : ?>
         <div class="entry-image">
             <p>
-                <a title="<?php esc_attr( the_title() ); ?>" href="<?php esc_url( the_permalink() ); ?>">
+                <a title="<?php the_title_attribute(); ?>" href="<?php esc_url( the_permalink() ); ?>">
                     <?php the_post_thumbnail(); ?>
                 </a>
             </p>
