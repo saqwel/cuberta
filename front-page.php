@@ -39,7 +39,7 @@ global $cuberta_defaults;
                     <h2><?php esc_html_e( 'Welcome text', 'cuberta' ); ?></h2>
                     <div class="entry-summary clearfix">
                         <p>
-                            <?php esc_html_e( "Cuberta is WordPress theme. Theme which fully uses entire width of the page, depending on the size of the screen. Site administrator can customize color scheme, headers fonts, replace front page items with widgets. Theme contains built-in main menu, social menu, front page.", 'cuberta' ); ?>
+                            <?php esc_html_e( "Cuberta is WordPress theme.", 'cuberta' ); ?>
                         </p>
                     </div><!-- .entry-content -->
                 <?php endif; ?>
@@ -61,7 +61,7 @@ global $cuberta_defaults;
                     __( 'Front page', 'cuberta' )
                 );
                 $cuberta_bodies_array = array( 
-                    __( 'Administrator can customize most of site elements colors.', 'cuberta' ),
+                    __( 'Administrator can customize colors of most of a site elements.', 'cuberta' ),
                     __( 'Site administrator can select one of 30 fonts for displaying headers.', 'cuberta' ),
                     __( 'Any front page layout may be hidden and replaced by widget.', 'cuberta' )
                 );

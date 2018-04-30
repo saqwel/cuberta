@@ -1,8 +1,8 @@
 === Cuberta ===
 Contributors: Saqwel
 Requires at least: WordPress 4.9.2
-Version: 2.4
-License: GPLv2 or later
+Version: 2.3.2
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
@@ -171,6 +171,17 @@ License: Open Font License
 Source: https://fonts.google.com/specimen/Yanone+Kaffeesatz
 
 == Changelog ==
+= 2.3.2 =
+* Released: April 15, 2018
+Removed most of default text on front page.
+Disabled home, search and login button from default.
+Replaced href="/" with <?php echo esc_url( home_url() ) ?>.
+Added subject tags.
+Replaced 'sanitize_text_field' with 'esc_attr' in searchform.php.
+Removed //add_theme_support( 'html5', array( 'script', 'style' ) );
+Replaced 'get_stylesheet_directory_uri' with 'get_template_directory_uri'.
+Removed empty file 'cuberta-editor-style.css'.
+
 = 2.3.1 =
 * Released: April 09, 2018
 

@@ -24,7 +24,6 @@ if ( !function_exists( 'cuberta_theme_setup' ) ) :
         ) );
         
         // https://core.trac.wordpress.org/ticket/42804
-        //add_theme_support( 'html5', array( 'script', 'style' ) );
         
         // Post thumbnails settings
         add_theme_support( 'post-thumbnails' );
@@ -35,14 +34,14 @@ if ( !function_exists( 'cuberta_theme_setup' ) ) :
 
         // Header image
         $args = array( 
-            'default-image' => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
+            'default-image' => get_template_directory_uri() . '/images/cuberta-default.jpg',
             'header-text'   => false 
         );
         add_theme_support( 'custom-header', $args );
         register_default_headers( array(
             'default-image' => array(
-                'url'           => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
-                'thumbnail_url' => get_stylesheet_directory_uri() . '/images/cuberta-default.jpg',
+                'url'           => get_template_directory_uri() . '/images/cuberta-default.jpg',
+                'thumbnail_url' => get_template_directory_uri() . '/images/cuberta-default.jpg',
                 'description'   => __( 'Default Header Image', 'cuberta' )
             ),
         ) );
@@ -122,7 +121,7 @@ function cuberta_page_builder() {
     'cuberta-page-builder', get_template_directory_uri() . '/js/cuberta-page-builder.js', array( 'jquery' )
     );
     wp_enqueue_style( 'cuberta-google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+SC|Amatic+SC|Anonymous+Pro|Bad+Script|Comfortaa|Cormorant+Garamond|Cormorant+Infant|Exo+2|Gabriela|Jura|Kelly+Slab|Kurale|Lobster|Lora|Montserrat+Alternates|Neucha|PT+Mono|Pangolin|Pattaya|Playfair+Display+SC|Poiret+One|Roboto|Ruslan+Display|Russo+One|Seymour+One|Stalinist+One|Ubuntu|Underdog|Vollkorn|Yanone+Kaffeesatz&amp;subset=cyrillic', false ); 
-    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_stylesheet_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
+    wp_enqueue_style( 'cuberta-fontawesome-fonts', get_template_directory_uri() . '/css/cuberta-font-awesome.min.css', false ); 
     wp_enqueue_style( 'cuberta-main-style', get_template_directory_uri() . '/style.css' );
 }
 
@@ -174,10 +173,10 @@ $cuberta_defaults = array(
     'cuberta_front_page_box_1'          => '',
     'cuberta_front_page_box_2'          => '',
     'cuberta_front_page_box_3'          => '',
-    'cuberta_menu_home_button'          => true,
+    'cuberta_menu_home_button'          => false,
     'cuberta_menu_bars_button'          => true,
-    'cuberta_menu_search_button'        => true,
-    'cuberta_menu_login_button'         => true
+    'cuberta_menu_search_button'        => false,
+    'cuberta_menu_login_button'         => false
 );
 
 // Create filter

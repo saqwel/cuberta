@@ -55,7 +55,7 @@
             ?>
             <div class="cuberta-menu">
                 <?php if ( $cuberta_home ) : ?>
-                    <a href="/" class="home-button"><span><?php esc_html_e( 'Home', 'cuberta' ); ?></span></a>
+                    <a href="<?php echo esc_url( home_url() ) ?>" class="home-button"><span><?php esc_html_e( 'Home', 'cuberta' ); ?></span></a>
                 <?php endif; ?>
                 <?php if ( !empty( wp_nav_menu( $cuberta_menu_parameters ) ) ) : ?>
                     <a href="javascript:void(0)" class="menu-button"><span><?php esc_html_e( 'Menu', 'cuberta' ); ?></span></a>
